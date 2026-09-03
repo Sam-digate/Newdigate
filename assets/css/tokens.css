@@ -1,0 +1,37 @@
+:root{
+  /* Brand and semantic colors */
+  --ink:#0F172A;
+  --ink-soft:#475569;
+  --ink-faint:#94A3B8;
+  --violet:#6C47FF;
+  --violet-700:#4F32D9;
+  --blue:#2F6BFF;
+  --blue-700:#2456D8;
+  --orange:#F59E0B;
+  --tint-violet:#F5F2FF;
+  --tint-blue:#EFF5FF;
+  --tint-soft:#F6F8FC;
+  --paper:#FFFFFF;
+  --line:#E2E8F0;
+
+  /* Compatibility aliases used by the Resources components */
+  --violet-dark:#5733E6;
+  --violet-pale:#F3F0FF;
+  --blue-pale:#EDF0FF;
+
+  /* Typography */
+  --display:'Plus Jakarta Sans',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+
+  /* Layout */
+  --wrap:1180px;
+  --wrap-narrow:1120px;
+  --wrap-reading:1006px;
+  --page-gutter:28px;
+
+  /* Shape and elevation */
+  --r:18px;
+  --shadow:0 24px 60px -38px rgba(15,23,42,.28);
+  --shadow-sm:0 14px 34px -26px rgba(15,23,42,.22);
+}

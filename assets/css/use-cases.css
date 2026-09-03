@@ -1,0 +1,94 @@
+/* Use Cases page styles migrated from overrides.css. */
+/* Use Cases page, published under the Resources family. */
+#pg-l-use-cases{
+  padding-top:70px;
+  background:#fff;
+  color:#0F172A;
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+#pg-l-use-cases *{box-sizing:border-box}
+#pg-l-use-cases a{color:inherit;text-decoration:none}
+#pg-l-use-cases .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--page-gutter)}
+#pg-l-use-cases .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+#pg-l-use-cases .nav-links{display:flex;gap:8px!important;align-items:center}
+#pg-l-use-cases .nav-links a{display:inline-flex;align-items:center;justify-content:center;padding:7px 12px;border-radius:999px;border:1px solid transparent;background:transparent!important;box-shadow:none!important;color:#334155!important;font-size:14.5px;font-weight:500;line-height:1;white-space:nowrap;transition:background .16s,color .16s,border-color .16s,box-shadow .16s}
+#pg-l-use-cases .nav-links a:hover,#pg-l-use-cases .nav-links a.on{background:transparent!important;border-color:transparent!important;box-shadow:none!important;color:#6C47FF!important}
+#pg-l-use-cases .nav-links a.on{font-weight:800!important}
+#pg-l-use-cases header.nav{position:fixed!important;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.92)!important;border-bottom:1px solid rgba(226,232,240,.92)!important;box-shadow:0 12px 34px -30px rgba(15,23,42,.42);backdrop-filter:saturate(1.4) blur(14px)}
+#pg-l-use-cases .brand{display:inline-flex!important;align-items:center;justify-content:flex-start;width:102px;height:30px;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden;white-space:nowrap;flex:none}
+#pg-l-use-cases .brand .a{color:transparent!important}
+#pg-l-use-cases .nav-cta{display:flex;gap:12px;align-items:center}
+#pg-l-use-cases .nav-cta .lang{display:none!important}
+#pg-l-use-cases header.nav .nav-cta .btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 18px;border:0!important;border-radius:10px;background:linear-gradient(135deg,#3A71FF 0%,#7C3AED 100%)!important;color:#fff!important;font-size:14px;font-weight:700;line-height:1;box-shadow:0 12px 24px -16px rgba(108,71,255,.8)}
+#pg-l-use-cases header.nav .nav-cta .btn-primary:hover{background:linear-gradient(135deg,#2F62E8 0%,#5B3DEB 100%)!important;transform:translateY(-1px)}
+#pg-l-use-cases .menu-btn{display:none!important}
+
+#pg-l-use-cases .use-cases-hero{
+  padding:76px 0 78px;
+  text-align:center;
+  background-color:#FAFAFD!important;
+  background-image:radial-gradient(circle at 75% 20%,rgba(108,71,255,.096) 0%,rgba(250,250,253,0) 65%),linear-gradient(to right,rgba(108,71,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(108,71,255,.045) 1px,transparent 1px)!important;
+  background-size:auto,36px 36px,36px 36px!important;
+  border-bottom:1px solid #E2E8F0;
+}
+
+#pg-l-use-cases .use-cases-hero-copy{max-width:980px;margin:0 auto}
+#pg-l-use-cases .use-cases-hero .badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 22px;padding:6px 14px;border-radius:999px;border:1px solid rgba(213,199,255,.85);background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.04);color:#5532E6;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0;text-transform:none;line-height:1}
+#pg-l-use-cases .use-cases-hero h1{max-width:none;margin:0 auto 18px;color:#0F172A;font-family:'Plus Jakarta Sans',var(--display),sans-serif!important;font-size:clamp(52px,4.2vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.02em}
+#pg-l-use-cases .use-cases-hero h1 .hl{font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;background-image:linear-gradient(90deg,#2672FF 0%,#9736FF 20%,#8D6EFF 36%,#6E90FF 50%,#2672FF 64%,#9736FF 82%,#8D6EFF 100%)!important;background-size:340% 100%!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:transparent!important;animation:pgBrandGradientFlow 8s ease-in-out infinite!important}
+#pg-l-use-cases .use-cases-hero p{max-width:72ch;margin:0 auto;color:#475569;font-size:18px;line-height:1.65}
+
+#pg-l-use-cases .use-cases-library{padding:72px 0 96px;background:#fff}
+#pg-l-use-cases .use-case-stack{display:grid;gap:28px}
+#pg-l-use-cases .use-case-card{display:grid;grid-template-columns:minmax(0,.96fr) minmax(360px,1.04fr);gap:34px;align-items:center;min-height:392px;padding:34px;border:1px solid #E2E8F0;border-radius:20px;background:#fff;box-shadow:0 26px 68px -48px rgba(15,23,42,.36);overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+#pg-l-use-cases .use-case-card:hover{transform:translateY(-4px);border-color:#B8A6FF;box-shadow:0 34px 72px -46px rgba(108,71,255,.4)}
+#pg-l-use-cases .use-case-card:focus-visible{outline:3px solid rgba(108,71,255,.24);outline-offset:4px}
+#pg-l-use-cases .use-case-copy{max-width:560px}
+#pg-l-use-cases .use-case-label{display:inline-flex;align-items:center;margin:0 0 18px;padding:6px 13px;border:1px solid #DDE3FF;border-radius:999px;color:#3B4DE0;background:#EDF0FF;font-family:var(--mono);font-size:10px;font-weight:800;line-height:1;letter-spacing:.1em;text-transform:uppercase}
+#pg-l-use-cases .use-case-labels{display:flex;align-items:center;gap:8px;margin:0 0 18px}
+#pg-l-use-cases .use-case-labels .use-case-label{margin:0}
+#pg-l-use-cases .use-case-label.is-digate{color:#3B4DE0;background:#EDF0FF;border-color:#DDE3FF}
+#pg-l-use-cases .use-case-label.is-xdigate{color:#6C47FF;background:#F4F0FF;border-color:#DDD6FE}
+#pg-l-use-cases .use-case-copy h2{margin:0 0 16px;color:#0F172A;font-family:var(--display);font-size:24px;font-weight:800;line-height:1.25;letter-spacing:0}
+#pg-l-use-cases .use-case-copy p{margin:0 0 14px;color:#475569;font-size:16px;line-height:1.68}
+#pg-l-use-cases .use-case-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+#pg-l-use-cases .use-case-points span{display:inline-flex;align-items:center;min-height:34px;padding:8px 13px;border-radius:999px;background:#F8FAFC;border:1px solid #E2E8F0;color:#334155;font-size:13px;font-weight:800;line-height:1}
+#pg-l-use-cases .use-case-media{position:relative;min-height:380px;height:100%;border-radius:16px;overflow:hidden;background:#EEF2FF}
+#pg-l-use-cases .use-case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0) 36%,rgba(15,23,42,.18) 100%);pointer-events:none}
+#pg-l-use-cases .use-case-media img{display:block;width:100%;height:100%;min-height:380px;object-fit:cover;filter:saturate(1.02) contrast(1.02)}
+#pg-l-use-cases .use-case-link{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:12px 28px;border-radius:999px;color:#fff;background:linear-gradient(135deg,#3A71FF 0%,#7C3AED 100%);font-size:14px;font-weight:800;line-height:1;box-shadow:0 16px 34px -20px rgba(58,113,255,.52),0 12px 28px -22px rgba(108,71,255,.58);transition:transform .18s ease,background .18s ease}
+#pg-l-use-cases .use-case-link i{font-size:12px;transition:transform .2s ease}
+#pg-l-use-cases .use-case-link:hover{background:linear-gradient(135deg,#2F62E8 0%,#5B3DEB 100%);transform:translateY(-2px)}
+#pg-l-use-cases .use-case-link:hover i{transform:translateX(4px)}
+
+#pg-l-use-cases footer{background:#111827!important;color:#F8FAFC!important;border-top:1px solid rgba(255,255,255,.08);padding:60px 0 38px}
+#pg-l-use-cases footer .brand{filter:brightness(0) invert(1);opacity:.94}
+#pg-l-use-cases footer .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.14)!important}
+#pg-l-use-cases footer .fg p{max-width:34ch;margin-top:14px;color:rgba(226,232,240,.78)!important;font-size:14px}
+#pg-l-use-cases footer .fcol h4{margin-bottom:14px;color:rgba(199,210,254,.68)!important;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+#pg-l-use-cases footer .fcol a{display:block;padding:5px 0;color:rgba(248,250,252,.86)!important;font-size:14px}
+#pg-l-use-cases footer .fcol a:hover{color:#C4B5FD!important}
+#pg-l-use-cases footer .fb{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:24px;color:rgba(203,213,225,.66)!important;font-size:13px}
+
+@media(max-width:980px){
+  #pg-l-use-cases .nav-links{display:none}
+  #pg-l-use-cases .menu-btn{display:inline-flex!important}
+  #pg-l-use-cases .use-case-card{grid-template-columns:1fr;gap:24px;min-height:0}
+  #pg-l-use-cases .use-case-copy{max-width:none}
+  #pg-l-use-cases footer .fg{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:640px){
+  #pg-l-use-cases .wrap{padding:0 22px}
+  #pg-l-use-cases .use-cases-hero{padding:56px 0 60px}
+  #pg-l-use-cases .use-cases-hero h1{font-size:clamp(38px,10vw,48px);max-width:none}
+  #pg-l-use-cases .use-cases-hero p{font-size:16px}
+  #pg-l-use-cases .use-cases-library{padding:46px 0 68px}
+  #pg-l-use-cases .use-case-card{padding:22px;border-radius:18px}
+  #pg-l-use-cases .use-case-media,#pg-l-use-cases .use-case-media img{min-height:220px}
+  #pg-l-use-cases footer .fg{grid-template-columns:1fr}
+}

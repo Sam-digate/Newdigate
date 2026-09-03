@@ -1,0 +1,193 @@
+/* Final shared navigation and wordmark rules. */
+/* Keep the Digate wordmark visible even when external logo images fail to load. */
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) header.nav .brand,
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) footer .brand{
+  width:auto!important;
+  min-width:102px!important;
+  height:auto!important;
+  min-height:30px!important;
+  background:none!important;
+  color:#2D2A28!important;
+  font-family:var(--display)!important;
+  font-size:23px!important;
+  font-weight:800!important;
+  letter-spacing:.04em!important;
+  line-height:1!important;
+  text-indent:0!important;
+  overflow:visible!important;
+  filter:none!important;
+}
+
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) .brand .a{
+  color:#F97316!important;
+}
+
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) footer .brand{
+  color:#fff!important;
+}
+
+#pg-l-built-for .map-core .map-core-logo{
+  width:auto!important;
+  height:auto!important;
+  background:none!important;
+  color:#fff!important;
+  font-family:var(--display)!important;
+  font-size:22px!important;
+  font-weight:800!important;
+  letter-spacing:.045em!important;
+  line-height:1!important;
+  filter:none!important;
+  overflow:visible!important;
+}
+
+#pg-l-built-for .map-core .map-core-logo .a{
+  color:#FF9B35!important;
+}
+
+/* Use the supplied Digate logo asset. */
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) header.nav .brand{
+  width:102px!important;
+  min-width:102px!important;
+  height:30px!important;
+  min-height:30px!important;
+  background:url("http://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;
+  color:transparent!important;
+  font-size:0!important;
+  letter-spacing:0!important;
+  line-height:1!important;
+  overflow:hidden!important;
+}
+
+:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-use-cases,#pg-l-company,#pg-l-demo) footer .brand{
+  width:102px!important;
+  min-width:102px!important;
+  height:30px!important;
+  min-height:30px!important;
+  background:url("http://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;
+  color:transparent!important;
+  font-size:0!important;
+  letter-spacing:0!important;
+  line-height:1!important;
+  overflow:hidden!important;
+  filter:brightness(0) invert(1)!important;
+}
+
+#pg-l-built-for .map-core .map-core-logo{
+  width:116px!important;
+  height:34px!important;
+  background:url("http://www.digate.net/index_files/logo.png") center/contain no-repeat!important;
+  filter:brightness(0) invert(1)!important;
+  color:transparent!important;
+  font-size:0!important;
+  letter-spacing:0!important;
+  line-height:1!important;
+  overflow:hidden!important;
+}
+
+#pg-l-use-cases.is-reveal-ready .use-case-card{
+  opacity:0;
+  transform:translateY(28px);
+  filter:blur(2px);
+  transition:opacity .72s ease,transform .72s cubic-bezier(.16,1,.3,1),filter .72s ease,box-shadow .22s ease,border-color .22s ease;
+}
+
+#pg-l-use-cases.is-reveal-ready .use-case-card.is-visible{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+
+#pg-l-use-cases.is-reveal-ready .use-case-card:nth-child(2){transition-delay:.06s}
+#pg-l-use-cases.is-reveal-ready .use-case-card:nth-child(3){transition-delay:.08s}
+#pg-l-use-cases.is-reveal-ready .use-case-card:nth-child(4){transition-delay:.1s}
+
+@media(prefers-reduced-motion:reduce){
+  #pg-l-use-cases.is-reveal-ready .use-case-card{
+    opacity:1;
+    transform:none;
+    filter:none;
+    transition:none;
+  }
+}
+
+/* Keep every Resources page locked to the homepage navigation geometry. */
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .nav-links{
+  gap:8px!important;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .nav-links>a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 12px;
+  border:1px solid transparent;
+  border-radius:999px;
+  color:#334155!important;
+  background:transparent!important;
+  font:500 14.5px/1 'Inter',sans-serif!important;
+  white-space:nowrap;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .nav-links>a:hover,
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .nav-links>a.on{
+  color:#6C47FF!important;
+  border-color:transparent!important;
+  background:transparent!important;
+  font-weight:500!important;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .resource-nav{
+  flex:0 0 91px;
+  width:91px;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .resources-trigger,
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) .resources-trigger.is-current{
+  width:91px;
+  padding:7px 0;
+  font-weight:500;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) header.nav .brand{
+  flex:0 0 102px;
+  width:102px!important;
+  min-width:102px!important;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) header.nav .nav-cta{
+  display:flex;
+  justify-content:flex-end;
+  flex:0 0 125px;
+  width:125px;
+}
+
+:is(#pg-l-home,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail) header.nav .nav-cta .lang{
+  display:none!important;
+}
+
+:is(#pg-l-blogs,#pg-l-use-cases) header.nav .btn-primary{
+  box-shadow:none!important;
+}
+
+/* Shared navigation container: one geometry across every production page. */
+:is(
+  #pg-l-home,
+  #pg-l-platform,
+  #pg-l-digate,
+  #pg-l-xdigate,
+  #pg-l-solutions,
+  #pg-l-built-for,
+  #pg-l-resources,
+  #pg-l-blogs,
+  #pg-l-blog-detail,
+  #pg-l-use-cases,
+  #pg-l-use-case-detail,
+  #pg-l-company,
+  #pg-l-demo
+) header.nav .nav-in{
+  box-sizing:border-box;
+  width:100%;
+  max-width:var(--wrap);
+  margin-inline:auto;
+  padding-inline:var(--page-gutter);
+}
