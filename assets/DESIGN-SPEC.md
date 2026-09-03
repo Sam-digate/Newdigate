@@ -19,7 +19,7 @@ Digate 被表达为一个面向复杂商业组织的 **Commerce Operating System
 
 ## 2. 当前信息架构
 
-当前站点已拆分为 13 个独立 HTML 页面，共用 `assets/css/*.css` 与 `assets/js/light-index.js`。每个页面仍保留一个隐藏 radio 作为现有页面作用域 CSS 的兼容层；站内导航已经改为真实 HTML 文件链接。
+当前站点包含 15 个独立 HTML 页面，共用 `assets/css/*.css` 与 `assets/js/light-index.js`。每个页面仍保留一个隐藏 radio 作为现有页面作用域 CSS 的兼容层；站内导航已经改为真实 HTML 文件链接。
 
 | 页面状态 | 角色 | 当前主要内容 |
 | --- | --- | --- |
@@ -27,11 +27,22 @@ Digate 被表达为一个面向复杂商业组织的 **Commerce Operating System
 | Platform | 平台架构解释 | 三层平台、统一数据、知识与执行关系 |
 | Digate | 智能与知识引擎 | 数据洞察、品牌知识、从洞察到执行 |
 | X-Digate | AI 执行组织 | Agent 部门、内容与自动化工作流 |
+| C-Digate | 专属 Commerce OS 构建 | 产品分工、转型理念、三项服务、实践依据、实施方法与适用客户 |
 | Solutions | 按业务问题组织方案 | 多类商业挑战与解决方案 |
 | Built For | 按客户与组织类型组织 | 商业模式、行业、全球运营 |
+| China | 中国市场专题 | 本地运营经验、渠道、双引擎、平台 Agent、合规、入华流程与案例 |
 | Resources / Blogs / Use Cases | 内容与证据 | FAQ、文章列表与详情、案例列表与详情 |
 | Company | 品牌叙事 | 愿景、团队、原则、公司背景 |
 | Demo | 转化页 | 表单、预期流程、适用对象、FAQ、CTA |
+
+### C-Digate：定制构建独立页面
+
+- 页面 `assets/html/cdigate.html`，专属样式 `assets/css/cdigate.css`；与 China 共用 `assets/css/brand-pages.css` 基础样式，原始 `cdigate-B-light.html` 保留。
+- C-Digate 入口位于 X-Digate 之后，桌面导航、移动菜单与页脚均接入真实链接。
+- 保留原稿内容及 Three engines. One system. 定位；其他页面的双引擎表述暂不更改，发布前需统一产品口径。
+- 使用居中 Hero、三张产品关系卡、双栏理念、三张白色服务卡、实践说明与 2×2 数据卡、四阶段流程、适用行业、浅蓝紫 CTA；沿用字体令牌、1180px 容器、轻边框和 20–24px 卡片圆角。
+- 原稿 70%、10× 等数字为示意数据，在数据区上方及下方直接标注待验证，不作为已核实成果。
+- 咨询按钮链接现有 Demo 页面，自身实践故事链接 China；沿用 Company 的首次滚入动画，支持减少动态效果及无脚本阅读。
 
 页面顶部的 `.bar` / `.mrow` 是原型页面切换器，不属于正式品牌导航。正式发布时应删除或只在内部预览环境显示。
 
@@ -120,7 +131,7 @@ Eyebrow、编号、运行状态、技术标签使用 JetBrains Mono、大写、`
 ### 5.1 容器
 
 - 标准内容最大宽度：`1180px`。
-- 正式导航统一使用 `1180px` 最大宽度、`28px` 左右 gutter，并采用 `border-box`；不再维护单独的 `1124px` 导航令牌。
+- 正式导航统一使用 `--wrap-nav:1320px` 最大宽度、`28px` 左右 gutter，并采用 `border-box`；为新增 China / C-Digate 入口加宽，正文仍使用 `--wrap:1180px`，不再维护旧的 `1124px` 导航宽度。
 - FAQ / Resources 的正文可继续使用 `1120px` 窄内容容器；它属于内容层级，不影响导航规范。
 - 桌面左右内边距：`28px`。
 - 小屏左右内边距：`18–22px`。
@@ -182,7 +193,7 @@ Eyebrow、编号、运行状态、技术标签使用 JetBrains Mono、大写、`
 - 导航文字：Inter `14.5px / 500`。
 - 当前页：品牌紫；不建议再增加重底色。
 - Resources 使用下拉菜单，需支持鼠标、焦点、点击外部关闭与 Escape。
-- `≤980px` 隐藏桌面导航，显示菜单按钮和移动菜单。
+- `≤1100px` 隐藏桌面导航，显示菜单按钮和移动菜单，给新增 China / C-Digate 入口留出空间；内容网格仍按各自断点收拢。
 
 注意：Logo 当前从 `http://www.digate.net/index_files/logo.png` 远程加载，存在混合内容与失效风险。应改成本地 HTTPS 资产，并保留文字 Logo 作为可靠回退。
 
@@ -284,7 +295,7 @@ Eyebrow、编号、运行状态、技术标签使用 JetBrains Mono、大写、`
 当前主要断点集中在：
 
 - `1100px`：复杂架构、双引擎和大型复合布局开始堆叠。
-- `980px`：桌面导航切换为移动菜单，多栏内容降为 1–2 列。
+- `980px`：多栏内容降为 1–2 列；全站导航因新增入口已提前至 `1100px` 收起。
 - `640px` / `680px`：Hero、按钮组、复杂流程、内容卡进一步单列化。
 - `560px`：传统卡片网格、表单双列、页脚完全单列。
 
@@ -408,3 +419,13 @@ Mobile: <= 640
 - 标题沿用部门卡片的 `24px`；Continuous Improvement 使用 `17px` 品牌渐变小标题，两句正文合并为一段，字号 `16px`。
 - Built to Grow With Your Business 以 One department → Multiple functions → Connected AI organization 展示扩展路径，下方保留基础架构无需重建的说明；路径在 `560px` 以下纵向排列。
 - 不增加图片、图标、按钮或胶囊，不改变上方 Human + AI 的内容。
+
+### China：中国市场独立页面
+
+- 正式页面为 `assets/html/china.html`，专属样式为 `assets/css/china.css`。`china-B-light.html` 作为原始参考保留，不改写。
+- 顶部 China 导航位于 Built For 之后、Resources 之前；全部正式页面及移动菜单、页脚入口使用真实文件链接。
+- 保留原稿正文与信息点；将底部经营数据移至运营经验区，减少重复的独立区块。结构为市场定位、经验与数据、渠道、市场挑战、双引擎、平台 Agent、合规、入华流程、案例与客户、CTA。
+- 复用全站字体和颜色令牌：1180px 标准容器、70px 导航、白色及浅灰蓝交替背景、蓝紫标题重点和 CTA、18–28px 卡片圆角、细边框和轻投影。红色仅保留为平台标签识别色，原 Emoji 改为 Font Awesome 图标。
+- 案例复用现有图片与详情模板；男士健康及高端美妆案例链接至各自详情。Customer Engagement 原稿暂无对应详情，入口明确指向 Use Cases 列表，不使用空链接。
+- 保留原稿的五星 TP、DP、PIPL、Top 10 等表述供审阅，内容来源为用户提供的参考文件，未作独立资质或合规核验；对外发布前需确认依据。
+- 桌面双栏/三栏卡片、五步流程；1100px、980px、640px 分档收拢，小屏单列。复用 Company 的首次滚入渐显，并支持减少动态效果与无脚本可见。

@@ -4808,7 +4808,7 @@
 /* Mobile site navigation, including the new Resources family. */
 .mobile-site-menu{display:none}
 
-@media(max-width:980px){
+@media(max-width:1100px){
   header.nav .mobile-site-menu{
     position:absolute;
     top:70px;
@@ -4879,12 +4879,12 @@
 }
 
 /* The hamburger belongs to the mobile breakpoint only. */
-:is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-company,#pg-l-demo) .menu-btn{
+:is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-company,#pg-l-demo) header.nav .menu-btn{
   display:none!important;
 }
 
-@media(max-width:980px){
-  :is(#pg-l-home,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-company,#pg-l-demo) .menu-btn{
+@media(max-width:1100px){
+  :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-company,#pg-l-demo) header.nav .menu-btn{
     display:inline-flex!important;
   }
 }

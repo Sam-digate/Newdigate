@@ -3,8 +3,8 @@ var DIGATE_HOME_ROUTE=DIGATE_IN_ASSETS_HTML?'../../index.html':'index.html';
 var DIGATE_INNER_PREFIX=DIGATE_IN_ASSETS_HTML?'':'assets/html/';
 var DIGATE_ROUTES={
   'l-home':DIGATE_HOME_ROUTE,
-  'l-platform':DIGATE_INNER_PREFIX+'platform.html','l-digate':DIGATE_INNER_PREFIX+'digate.html','l-xdigate':DIGATE_INNER_PREFIX+'xdigate.html',
-  'l-solutions':DIGATE_INNER_PREFIX+'solutions.html','l-built-for':DIGATE_INNER_PREFIX+'built-for.html','l-resources':DIGATE_INNER_PREFIX+'resources.html',
+  'l-platform':DIGATE_INNER_PREFIX+'platform.html','l-digate':DIGATE_INNER_PREFIX+'digate.html','l-xdigate':DIGATE_INNER_PREFIX+'xdigate.html','l-cdigate':DIGATE_INNER_PREFIX+'cdigate.html',
+  'l-solutions':DIGATE_INNER_PREFIX+'solutions.html','l-built-for':DIGATE_INNER_PREFIX+'built-for.html','l-china':DIGATE_INNER_PREFIX+'china.html','l-resources':DIGATE_INNER_PREFIX+'resources.html',
   'l-blogs':DIGATE_INNER_PREFIX+'blogs.html','l-blog-detail':DIGATE_INNER_PREFIX+'blog-detail.html','l-use-cases':DIGATE_INNER_PREFIX+'use-cases.html',
   'l-use-case-detail':DIGATE_INNER_PREFIX+'use-case-detail.html','l-company':DIGATE_INNER_PREFIX+'company.html','l-demo':DIGATE_INNER_PREFIX+'demo.html'
 };
@@ -264,8 +264,10 @@ function digateRoute(key){return DIGATE_ROUTES[key] || DIGATE_HOME_ROUTE;}
       '<a href="'+digateRoute('l-platform')+'" data-go="l-platform">Platform</a>'+
       '<a href="'+digateRoute('l-digate')+'" data-go="l-digate">Digate</a>'+
       '<a href="'+digateRoute('l-xdigate')+'" data-go="l-xdigate">X-Digate</a>'+
+      '<a href="'+digateRoute('l-cdigate')+'" data-go="l-cdigate">C-Digate</a>'+
       '<a href="'+digateRoute('l-solutions')+'" data-go="l-solutions">Solutions</a>'+
       '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for">Built For</a>'+
+      '<a href="'+digateRoute('l-china')+'" data-go="l-china">China</a>'+
       '<div class="mobile-resource-group"><span>Resources</span>'+
         '<a href="'+digateRoute('l-blogs')+'" data-go="l-blogs">Blogs</a>'+
         '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases">Use Cases</a>'+
@@ -273,6 +275,10 @@ function digateRoute(key){return DIGATE_ROUTES[key] || DIGATE_HOME_ROUTE;}
         '<a href="'+digateRoute('l-resources')+'" data-go="l-resources">FAQs</a></div>'+
       '<a href="'+digateRoute('l-company')+'" data-go="l-company">Company</a>';
     header.appendChild(panel);
+    var currentPage=header.closest('.page');
+    panel.querySelectorAll('a[data-go]').forEach(function(link){
+      if(currentPage && currentPage.id==='pg-'+link.dataset.go){link.setAttribute('aria-current','page');}
+    });
     menuButton.setAttribute('aria-expanded','false');
     menuButton.setAttribute('aria-controls',panelId);
 
@@ -820,9 +826,9 @@ document.querySelectorAll('[data-achieve-list]').forEach(function(list){
   requestReveal();
 })();
 
-/* Company sections use the same one-time viewport reveal as Use Cases. */
+/* Company and China sections share the one-time viewport reveal used by Use Cases. */
 (function(){
-  var page=document.getElementById('pg-l-company');
+  var page=document.getElementById('pg-l-company') || document.getElementById('pg-l-china') || document.getElementById('pg-l-cdigate');
   if(!page){return;}
   var blocks=[].slice.call(page.querySelectorAll('.rv')).filter(function(block){
     return block.getClientRects().length>0;

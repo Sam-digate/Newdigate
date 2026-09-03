@@ -26,6 +26,7 @@
 
   /* Layout */
   --wrap:1180px;
+  --wrap-nav:1320px;
   --wrap-narrow:1120px;
   --wrap-reading:1006px;
   --page-gutter:28px;
