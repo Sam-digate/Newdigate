@@ -669,5 +669,27 @@
 @media(max-width:640px){#pg-l-home .achieve-toggle{grid-template-columns:40px 1fr 26px;gap:12px;padding:13px}#pg-l-home .achieve-toggle .achieve-ic{width:40px;height:40px}#pg-l-home .achieve-panel p{padding:0 16px 18px 65px}#pg-l-home .agent-run{height:auto;min-height:560px;border-radius:20px}#pg-l-home .agent-run-inner{padding:18px}#pg-l-home .runtime-head,#pg-l-home .runtime-plan-head{align-items:flex-start;flex-direction:column}#pg-l-home .runtime-actions{width:100%;justify-content:space-between}#pg-l-home .runtime-agent{grid-template-columns:16px 1fr auto}#pg-l-home .runtime-agent .tag{display:none}#pg-l-home .runtime-metrics{grid-template-columns:1fr}}
 @media(max-width:1100px){#pg-l-home .engine-system{grid-template-columns:1fr;gap:22px}#pg-l-home .engine-data-flow{display:none}#pg-l-home .engine-loop-core{order:2;min-height:300px}#pg-l-home .engine-card.execution{order:3}#pg-l-home .engine-card{min-height:auto}#pg-l-home .engine-panel{max-width:760px;margin:0 auto}}
 @media(max-width:640px){#pg-l-home .engine-hub-head{margin-bottom:36px}#pg-l-home .engine-panel{padding:18px;border-radius:20px}#pg-l-home .engine-card{padding:22px;border-radius:16px}#pg-l-home .engine-card-top{align-items:flex-start;flex-direction:column}#pg-l-home .engine-loop-core{min-height:260px}#pg-l-home .engine-loop-copy{width:142px;height:142px}#pg-l-home .engine-loop-badge{display:none}#pg-l-home .engine-feedback{align-items:flex-start;text-align:left}}
+
+/* Two-engine story: compact narrative with a continuous system visual. */
+#pg-l-home .engine-story-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:54px;align-items:start}
+#pg-l-home .engine-hub-head h2{max-width:900px;margin-left:auto;margin-right:auto}
+#pg-l-home .engine-hub-head p{max-width:720px}
+#pg-l-home .engine-story-copy{min-width:0;align-self:start}
+#pg-l-home .engine-story-points{display:grid;gap:12px}
+#pg-l-home .engine-story-point{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;padding:18px;border:1px solid #E2E8F0;border-radius:16px;background:#fff;box-shadow:0 16px 38px -34px rgba(15,23,42,.45);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+#pg-l-home .engine-story-point:hover{transform:translateY(-3px);box-shadow:0 24px 48px -34px rgba(58,71,160,.34)}
+#pg-l-home .engine-story-point.intelligence:hover{border-color:#BFD0FF}
+#pg-l-home .engine-story-point.execution:hover{border-color:#D6C7FF}
+#pg-l-home .engine-story-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;font-size:19px}
+#pg-l-home .engine-story-point.intelligence .engine-story-icon{background:#EEF4FF;color:#3A71FF}
+#pg-l-home .engine-story-point.execution .engine-story-icon{background:#F4F0FF;color:#7C3AED}
+#pg-l-home .engine-story-point h3{margin:1px 0 5px;font-size:18px;line-height:1.25;color:#111827}
+#pg-l-home .engine-story-point p{margin:0;font-size:14.5px;line-height:1.55;color:#52627A}
+#pg-l-home .engine-story-conclusion{margin:14px 0 0;padding:18px 20px;border-radius:16px;border:0;background:linear-gradient(120deg,#3A71FF,#6C47FF 58%,#7C3AED);box-shadow:0 22px 48px -34px rgba(76,56,201,.7);font-size:14.5px;line-height:1.6;color:#fff;font-weight:700}
+#pg-l-home .engine-story-image{position:relative;align-self:start;min-width:0;width:100%;aspect-ratio:4/3;margin:0;border:1px solid #fff;border-radius:26px;background:#EEF2F7;box-shadow:0 28px 64px -34px rgba(49,46,129,.34);overflow:hidden}
+#pg-l-home .engine-story-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+#pg-l-home .engine-story-image:hover img{transform:scale(1.025)}
+@media(max-width:1100px){#pg-l-home .engine-story-layout{grid-template-columns:1fr;gap:36px}#pg-l-home .engine-story-copy{max-width:760px}#pg-l-home .engine-story-image{max-width:760px;margin:0 auto}}
+@media(max-width:640px){#pg-l-home .engine-story-image{border-radius:20px}}
 @media(max-width:980px){#pg-l-home .model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){#pg-l-home .model-grid{grid-template-columns:1fr}#pg-l-home .model-card{min-height:auto;padding:26px 24px}}

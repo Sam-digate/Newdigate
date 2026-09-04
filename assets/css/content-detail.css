@@ -110,6 +110,7 @@
 #pg-l-use-case-detail .case-detail-inline-media img{display:block;width:100%;height:auto;border-radius:12px}
 #pg-l-use-case-detail .case-detail-results{grid-template-columns:repeat(4,minmax(0,1fr))}
 #pg-l-use-case-detail .case-detail-results.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+#pg-l-use-case-detail .case-detail-results.five{grid-template-columns:repeat(5,minmax(0,1fr))}
 #pg-l-use-case-detail .case-detail-results div{background:linear-gradient(180deg,#FBFAFF,#F6F3FF);border-color:#E2DCFF}
 
 #pg-l-use-case-detail .case-detail-next{padding:0 0 90px;background:#fff}
@@ -146,6 +147,7 @@
   #pg-l-use-case-detail .case-detail-inline-media{padding:10px;border-radius:14px}
   #pg-l-use-case-detail .case-detail-inline-media img{border-radius:9px}
   #pg-l-use-case-detail .case-detail-facts,#pg-l-use-case-detail .case-detail-results{grid-template-columns:1fr 1fr}
+  #pg-l-use-case-detail .case-detail-results.five{grid-template-columns:1fr 1fr}
   #pg-l-use-case-detail .case-detail-next{padding-bottom:64px}
   #pg-l-use-case-detail .case-detail-next-card{align-items:flex-start;flex-direction:column;padding:28px 24px}
   #pg-l-use-case-detail footer .fg{grid-template-columns:1fr}

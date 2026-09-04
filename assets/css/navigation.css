@@ -224,3 +224,44 @@
   :is(#pg-l-china,#pg-l-cdigate) header.nav .nav-cta{gap:8px}
   :is(#pg-l-china,#pg-l-cdigate) header.nav .nav-cta .btn-primary{padding-inline:12px;font-size:13px}
 }
+
+/* Shared hero title scale across primary site pages. */
+:is(
+  #pg-l-home .hero-v1 h1,
+  #pg-l-platform .platform-hero-copy h1,
+  #pg-l-digate .digate-hero-copy h1,
+  #pg-l-xdigate .xdigate-hero-v1 h1,
+  #pg-l-cdigate .subhero h1,
+  #pg-l-solutions .solutions-hero-v1 h1,
+  #pg-l-built-for .built-for-hero h1,
+  #pg-l-china .subhero h1,
+  #pg-l-company .subhero h1,
+  #pg-l-resources .subhero h1,
+  #pg-l-blogs .blog-hero-copy h1,
+  #pg-l-use-cases .use-cases-hero h1,
+  #pg-l-demo .top h1
+){
+  font-size:44px!important;
+  line-height:1.15!important;
+  letter-spacing:-.015em!important;
+}
+
+@media(max-width:640px){
+  :is(
+    #pg-l-home .hero-v1 h1,
+    #pg-l-platform .platform-hero-copy h1,
+    #pg-l-digate .digate-hero-copy h1,
+    #pg-l-xdigate .xdigate-hero-v1 h1,
+    #pg-l-cdigate .subhero h1,
+    #pg-l-solutions .solutions-hero-v1 h1,
+    #pg-l-built-for .built-for-hero h1,
+    #pg-l-china .subhero h1,
+    #pg-l-company .subhero h1,
+    #pg-l-resources .subhero h1,
+    #pg-l-blogs .blog-hero-copy h1,
+    #pg-l-use-cases .use-cases-hero h1,
+    #pg-l-demo .top h1
+  ){
+    font-size:clamp(36px,9vw,44px)!important;
+  }
+}
