@@ -33,13 +33,36 @@
 </div></section>
 
 <!-- family context -->
-<section><div class="wrap">
-  <div class="sh c rv"><span class="eyebrow">Three engines. One system.</span><h2>Where C-Digate fits.</h2>
+<section class="cd-engine-family-section"><div class="wrap">
+  <div class="sh c rv"><span class="eyebrow">Three engines. One system.</span><h2>Where C-Digate <span class="text-brand-gradient">fits.</span></h2>
     <p>Digate gives you the intelligence. X-Digate runs the execution. C-Digate builds the custom system when your operation needs more than off-the-shelf.</p></div>
-  <div class="family rv">
-    <div class="fam d"><div class="k">Digate · Know</div><h3>Intelligence Engine</h3><p>Connects and structures your data into one trusted source of truth.</p></div>
-    <div class="fam x"><div class="k">X-Digate · Act</div><h3>Execution Engine</h3><p>AI departments that plan, create, operate, and optimize.</p></div>
-    <div class="fam c"><div class="k">C-Digate · Build</div><h3>Custom Engine</h3><p>An operator-led build of a bespoke operating system, made native to your brand.</p></div>
+
+  <div class="cd-engine-explorer rv" data-cd-engine-explorer>
+    <div class="cd-engine-tabs" role="tablist" aria-label="Digate engine family" aria-orientation="vertical">
+      <button class="cd-engine-tab" id="cd-engine-tab-digate" type="button" role="tab" aria-selected="false" aria-controls="cd-engine-panel-digate" tabindex="-1">
+        <span class="cd-engine-kicker">Digate · Know</span><strong>Intelligence Engine</strong>
+        <span>Connects and structures your data into one trusted source of truth.</span>
+      </button>
+      <button class="cd-engine-tab" id="cd-engine-tab-xdigate" type="button" role="tab" aria-selected="false" aria-controls="cd-engine-panel-xdigate" tabindex="-1">
+        <span class="cd-engine-kicker">X-Digate · Act</span><strong>Execution Engine</strong>
+        <span>AI departments that plan, create, operate, and optimize.</span>
+      </button>
+      <button class="cd-engine-tab is-active" id="cd-engine-tab-cdigate" type="button" role="tab" aria-selected="true" aria-controls="cd-engine-panel-cdigate" tabindex="0">
+        <span class="cd-engine-kicker">C-Digate · Build</span><strong>Custom Engine</strong>
+        <span>An operator-led build of a bespoke operating system, made native to your brand.</span>
+      </button>
+    </div>
+    <div class="cd-engine-visual">
+      <figure class="cd-engine-panel digate" id="cd-engine-panel-digate" role="tabpanel" aria-labelledby="cd-engine-tab-digate" hidden>
+        <div class="cd-engine-media-frame"><span>Connected Intelligence</span><img src="https://testagent.xdigate.cn/api/projects/69aa92f32c28bc1a7207a615/storage?relativePath=resources%2F1788485455502-%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260904005219_36_37.jpg" alt="Digate Intelligence Engine interface"></div>
+      </figure>
+      <figure class="cd-engine-panel xdigate" id="cd-engine-panel-xdigate" role="tabpanel" aria-labelledby="cd-engine-tab-xdigate" hidden>
+        <div class="cd-engine-media-frame"><span>Coordinated Execution</span><img src="https://testagent.xdigate.cn/api/projects/69aa92f32c28bc1a7207a615/storage?relativePath=resources%2F1788489988359-27.jpg" alt="X-Digate Execution Engine interface"></div>
+      </figure>
+      <figure class="cd-engine-panel cdigate is-active" id="cd-engine-panel-cdigate" role="tabpanel" aria-labelledby="cd-engine-tab-cdigate">
+        <div class="cd-engine-media-frame"><span>Custom Operating System</span><img src="https://testagent.xdigate.cn/api/projects/69aa92f32c28bc1a7207a615/storage/?relativePath=resources%2F1788424040773-ChatGPT_Image_Sep_3_2026_05_26_13_PM.png" alt="C-Digate Custom Engine interface"></div>
+      </figure>
+    </div>
   </div>
 </div></section>
 
@@ -50,7 +73,8 @@
     <h2>AI isn't a project you finish. It's a way of operating you <span class="text-brand-gradient">become.</span></h2>
   </div>
   <div class="note">
-    <p>The brands that win the next decade won't be the ones with the most pilots. They'll be the ones where AI is native to the work — in the team, the data, the daily decisions. That shift is organizational, not just technical. It's what C-Digate builds.</p>
+    <p>The brands that win the next decade won't be the ones with the most pilots. They'll be the ones where AI is native to the work — in the team, the data, and the daily decisions. That shift is organizational, not just technical. It's what <strong class="text-brand-gradient">C-Digate builds.</strong></p>
+    <a class="btn btn-primary" href="demo.html" data-go="l-demo">Book a Demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
   </div>
 </div></section>
 
@@ -58,11 +82,23 @@
 <section><div class="wrap">
   <div class="offer rv">
     <span class="eyebrow">What C-Digate does</span>
-    <h2>Three ways we move you from interested in AI to running on it.</h2>
-    <div class="pillars">
-      <div class="pillar"><div class="num">01</div><h3>Chart the shift</h3><p>A clear, honest read of where AI creates real value in your brand — and where it doesn't yet. You leave with a prioritized roadmap your team actually believes in, not a 90-slide theory.</p></div>
-      <div class="pillar"><div class="num">02</div><h3>Build the systems</h3><p>We don't hand off and wish you luck. We build the data foundations and agentic workflows that do the work — live, in your operation — and prove them on real outcomes before we scale.</p></div>
-      <div class="pillar"><div class="num">03</div><h3>Embed the capability</h3><p>The goal is for the system to outlast the engagement. We train your people, set the operating rhythm, and hand over a brand that runs AI-first on its own.</p></div>
+    <h2>Three ways we move you from interested in AI to <span class="text-brand-gradient">running on it.</span></h2>
+    <div class="cd-offer-layout">
+      <div class="cd-pillar-accordion" data-cd-pillar-list>
+        <article class="cd-pillar-item is-open">
+          <button class="cd-pillar-toggle" type="button" id="cd-pillar-chart-toggle" aria-expanded="true" aria-controls="cd-pillar-chart-panel"><span class="num">01</span><span class="cd-pillar-title">Chart the shift</span><span class="cd-pillar-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+          <div class="cd-pillar-panel" id="cd-pillar-chart-panel" role="region" aria-labelledby="cd-pillar-chart-toggle"><div class="cd-pillar-panel-inner"><p>A clear, honest read of where AI creates real value in your brand — and where it doesn't yet. You leave with a prioritized roadmap your team actually believes in, not a 90-slide theory.</p></div></div>
+        </article>
+        <article class="cd-pillar-item">
+          <button class="cd-pillar-toggle" type="button" id="cd-pillar-build-toggle" aria-expanded="false" aria-controls="cd-pillar-build-panel"><span class="num">02</span><span class="cd-pillar-title">Build the systems</span><span class="cd-pillar-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+          <div class="cd-pillar-panel" id="cd-pillar-build-panel" role="region" aria-labelledby="cd-pillar-build-toggle"><div class="cd-pillar-panel-inner"><p>We don't hand off and wish you luck. We build the data foundations and agentic workflows that do the work — live, in your operation — and prove them on real outcomes before we scale.</p></div></div>
+        </article>
+        <article class="cd-pillar-item">
+          <button class="cd-pillar-toggle" type="button" id="cd-pillar-embed-toggle" aria-expanded="false" aria-controls="cd-pillar-embed-panel"><span class="num">03</span><span class="cd-pillar-title">Embed the capability</span><span class="cd-pillar-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+          <div class="cd-pillar-panel" id="cd-pillar-embed-panel" role="region" aria-labelledby="cd-pillar-embed-toggle"><div class="cd-pillar-panel-inner"><p>The goal is for the system to outlast the engagement. We train your people, set the operating rhythm, and hand over a brand that runs AI-first on its own.</p></div></div>
+        </article>
+      </div>
+      <figure class="cd-offer-image"><img src="https://testagent.xdigate.cn/api/projects/69aa92f32c28bc1a7207a615/storage?relativePath=resources%2F1788500183766-Group_415.jpg" alt="C-Digate operating system workflow" width="1600" height="1067" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </div></section>
@@ -71,16 +107,16 @@
 <section id="proof" class="cd-soft"><div class="wrap proof rv">
   <div>
     <span class="eyebrow">Why us</span>
-    <h2>We're operators, <span class="text-brand-gradient">not advisors.</span></h2>
+    <h2>We're operators,<br><span class="text-brand-gradient">not advisors.</span></h2>
     <p>We didn't read about AI transformation — we lived it. We took our own consumer-commerce business and rebuilt it on an agentic platform, replacing manual operations with systems that run themselves. Everything we'll do for you, we've already done to ourselves. That's the difference between a deck and a partner.</p>
     <a class="btn btn-ghost" href="china.html" data-go="l-china">Read the full story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
   </div>
-  <div class="proof-evidence"><p class="metrics-label">Illustrative figures · Pending verification</p><div class="metrics">
-    <div class="metric"><div class="big"><span class="a">70</span>%</div><div class="cap">of manual operations replaced by agentic workflows in our own business*</div></div>
-    <div class="metric"><div class="big">10<span class="a">×</span></div><div class="cap">faster from raw data to a decision-ready answer*</div></div>
-    <div class="metric"><div class="big">1</div><div class="cap">unified data layer across every channel, instead of a dozen silos*</div></div>
-    <div class="metric"><div class="big">24<span class="a">/</span>7</div><div class="cap">operations that no longer depend on adding headcount*</div></div>
-  </div><p class="metrics-note">*Illustrative figures from our own transformation — replace with verified metrics.</p></div>
+  <div class="proof-evidence"><div class="metrics">
+    <div class="metric"><div class="big"><span class="a">70</span>%</div><div class="cap">of manual operations replaced by agentic workflows in our own business</div></div>
+    <div class="metric"><div class="big">10<span class="a">×</span></div><div class="cap">faster from raw data to a decision-ready answer</div></div>
+    <div class="metric"><div class="big">1</div><div class="cap">unified data layer across every channel, instead of a dozen silos</div></div>
+    <div class="metric"><div class="big">24<span class="a">/</span>7</div><div class="cap">operations that no longer depend on adding headcount</div></div>
+  </div></div>
 </div></section>
 
 <!-- method -->
@@ -96,21 +132,23 @@
 
 <!-- who -->
 <section class="cd-soft"><div class="wrap">
-  <div class="sh rv"><span class="eyebrow">Who we build with</span>
-    <h2>Consumer brands ready to <span class="text-brand-gradient">lead the shift</span> — not watch it happen.</h2></div>
-  <div class="tags rv">
-    <div class="tag">Beauty &amp; personal care</div>
-    <div class="tag">Food &amp; beverage</div>
-    <div class="tag">Fashion &amp; apparel</div>
-    <div class="tag">Health &amp; wellness</div>
-    <div class="tag">Home &amp; lifestyle</div>
-    <div class="tag">Multi-market retailers</div>
+  <div class="sh rv cd-audience-head"><span class="eyebrow">Who we build with</span>
+    <h2>Consumer brands ready to <span class="text-brand-gradient">lead the shift.</span><br>Not watch it happen.</h2>
+    <p>For commerce teams ready to turn their operating model into a competitive advantage.</p>
+  </div>
+  <div class="cd-audience-grid rv">
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span><h3>Beauty &amp; Personal Care</h3><p>Fast product cycles, omnichannel commerce, creator ecosystems.</p></article>
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-utensils"></i></span><h3>Food &amp; Beverage</h3><p>Retail distribution, customer loyalty, operational visibility.</p></article>
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-shirt"></i></span><h3>Fashion &amp; Apparel</h3><p>Seasonal collections, inventory synchronization, marketplace growth.</p></article>
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span><h3>Health &amp; Wellness</h3><p>Highly regulated products, global expansion, customer retention.</p></article>
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-house"></i></span><h3>Home &amp; Lifestyle</h3><p>Marketplace expansion, customer insights, marketing optimization.</p></article>
+    <article class="cd-audience-card"><span class="i" aria-hidden="true"><i class="fa-solid fa-store"></i></span><h3>Multi-Market Retailers</h3><p>Localized execution, cross-market coordination, unified visibility.</p></article>
   </div>
 </div></section>
 
 <!-- cta -->
 <section id="start" class="cd-cta-section"><div class="wrap"><div class="cta rv"><div class="spark"></div>
-  <h2>Let's build a system that's <span class="text-brand-gradient">native</span> to your brand.</h2>
+  <h2>Let's build a system that's <span class="text-brand-gradient">native</span><br>to your brand.</h2>
   <p>A first conversation is 45 minutes and costs nothing but candor.</p>
   <a class="btn btn-primary" href="demo.html" data-go="l-demo">Start a Conversation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 </div></div></section>
