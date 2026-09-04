@@ -1796,15 +1796,17 @@
   line-height:1.05;
 }
 
-#pg-l-company .company-truth-network .truth-orbit-item.oi1{--orbit-size:504px;--start:250deg;--counter:-250deg;--orbit-speed:42s}
-#pg-l-company .company-truth-network .truth-orbit-item.oi2{--orbit-size:504px;--start:322deg;--counter:-322deg;--orbit-speed:42s}
-#pg-l-company .company-truth-network .truth-orbit-item.oi3{--orbit-size:392px;--start:42deg;--counter:-42deg;--orbit-speed:34s}
-#pg-l-company .company-truth-network .truth-orbit-item.oi4{--orbit-size:504px;--start:106deg;--counter:-106deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi1{--orbit-size:504px;--start:214deg;--counter:-214deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi2{--orbit-size:504px;--start:274deg;--counter:-274deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi3{--orbit-size:392px;--start:45deg;--counter:-45deg;--orbit-speed:34s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi4{--orbit-size:504px;--start:94deg;--counter:-94deg;--orbit-speed:42s}
 #pg-l-company .company-truth-network .truth-orbit-item.oi5{--orbit-size:392px;--start:135deg;--counter:-135deg;--orbit-speed:34s}
-#pg-l-company .company-truth-network .truth-orbit-item.oi6{--orbit-size:504px;--start:178deg;--counter:-178deg;--orbit-speed:42s}
-#pg-l-company .company-truth-network .truth-orbit-item.oi7{--orbit-size:392px;--start:270deg;--counter:-270deg;--orbit-speed:34s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi6{--orbit-size:504px;--start:154deg;--counter:-154deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi7{--orbit-size:392px;--start:315deg;--counter:-315deg;--orbit-speed:34s}
 #pg-l-company .company-truth-network .truth-orbit-item.oi8{--orbit-size:264px;--start:18deg;--counter:-18deg;--orbit-speed:26s}
 #pg-l-company .company-truth-network .truth-orbit-item.oi9{--orbit-size:504px;--start:34deg;--counter:-34deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi10{--orbit-size:504px;--start:334deg;--counter:-334deg;--orbit-speed:42s}
+#pg-l-company .company-truth-network .truth-orbit-item.oi11{--orbit-size:392px;--start:225deg;--counter:-225deg;--orbit-speed:34s}
 
 #pg-l-company .company-truth-network .truth-satellite{
   position:absolute;
@@ -1931,13 +1933,15 @@
   #pg-l-company .company-truth-network .truth-orbit-item.oi2,
   #pg-l-company .company-truth-network .truth-orbit-item.oi4,
   #pg-l-company .company-truth-network .truth-orbit-item.oi6,
-  #pg-l-company .company-truth-network .truth-orbit-item.oi9{
+  #pg-l-company .company-truth-network .truth-orbit-item.oi9,
+  #pg-l-company .company-truth-network .truth-orbit-item.oi10{
     --orbit-size:284px;
   }
 
   #pg-l-company .company-truth-network .truth-orbit-item.oi3,
   #pg-l-company .company-truth-network .truth-orbit-item.oi5,
-  #pg-l-company .company-truth-network .truth-orbit-item.oi7{
+  #pg-l-company .company-truth-network .truth-orbit-item.oi7,
+  #pg-l-company .company-truth-network .truth-orbit-item.oi11{
     --orbit-size:220px;
   }
 
@@ -2903,15 +2907,17 @@
   font-weight:800;
   line-height:1.05;
 }
-#pg-l-digate .truth-orbit-item.oi1{--orbit-size:504px;--start:250deg;--counter:-250deg;--orbit-speed:42s}
-#pg-l-digate .truth-orbit-item.oi2{--orbit-size:504px;--start:312deg;--counter:-312deg;--orbit-speed:42s}
-#pg-l-digate .truth-orbit-item.oi3{--orbit-size:392px;--start:42deg;--counter:-42deg;--orbit-speed:34s}
-#pg-l-digate .truth-orbit-item.oi4{--orbit-size:504px;--start:88deg;--counter:-88deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi1{--orbit-size:504px;--start:260deg;--counter:-260deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi2{--orbit-size:504px;--start:320deg;--counter:-320deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi3{--orbit-size:392px;--start:45deg;--counter:-45deg;--orbit-speed:34s}
+#pg-l-digate .truth-orbit-item.oi4{--orbit-size:504px;--start:80deg;--counter:-80deg;--orbit-speed:42s}
 #pg-l-digate .truth-orbit-item.oi5{--orbit-size:392px;--start:135deg;--counter:-135deg;--orbit-speed:34s}
-#pg-l-digate .truth-orbit-item.oi6{--orbit-size:504px;--start:186deg;--counter:-186deg;--orbit-speed:42s}
-#pg-l-digate .truth-orbit-item.oi7{--orbit-size:392px;--start:270deg;--counter:-270deg;--orbit-speed:34s}
+#pg-l-digate .truth-orbit-item.oi6{--orbit-size:504px;--start:200deg;--counter:-200deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi7{--orbit-size:392px;--start:315deg;--counter:-315deg;--orbit-speed:34s}
 #pg-l-digate .truth-orbit-item.oi8{--orbit-size:264px;--start:18deg;--counter:-18deg;--orbit-speed:26s}
 #pg-l-digate .truth-orbit-item.oi9{--orbit-size:504px;--start:20deg;--counter:-20deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi10{--orbit-size:504px;--start:140deg;--counter:-140deg;--orbit-speed:42s}
+#pg-l-digate .truth-orbit-item.oi11{--orbit-size:392px;--start:225deg;--counter:-225deg;--orbit-speed:34s}
 #pg-l-digate .truth-satellite{position:absolute;left:50%;top:50%;z-index:3;width:264px;height:264px;transform:translate(-50%,-50%);animation:pgDigateTruthSpin 13s linear infinite;pointer-events:none}
 #pg-l-digate .truth-satellite.s2{width:392px;height:392px;animation-duration:18s;animation-direction:reverse}
 #pg-l-digate .truth-satellite.s3{width:504px;height:504px;animation-duration:23s}
