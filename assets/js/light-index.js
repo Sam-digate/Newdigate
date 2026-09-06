@@ -10,6 +10,11 @@ var DIGATE_ROUTES={
 };
 function digateRoute(key){return DIGATE_ROUTES[key] || DIGATE_HOME_ROUTE;}
 
+/* Keep the i-Digate product label consistent in every global navigation. */
+document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-digate"]').forEach(function(link){
+  link.textContent='i-Digate';
+});
+
 /* Resources is a family of pages; the FAQ is the first page to be published. */
 (function(){
   var menus=[];
@@ -611,6 +616,7 @@ document.querySelectorAll('[data-achieve-list]').forEach(function(list){
   initStackedCards('#pg-l-solutions .sols .sol','r-l-solutions');
   initStackedCards('#pg-l-digate .digate-suite-stack .su','r-l-digate');
   initStackedCards('#pg-l-xdigate .xdigate-dept-stack-v2 .dept','r-l-xdigate');
+  initStackedCards('#pg-l-platform .platform-layer-stack .platform-layer-card','r-l-platform');
 })();
 
 (function(){
