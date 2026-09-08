@@ -4522,6 +4522,7 @@
   transform:none!important;
 }
 .nav-links .resource-menu-icon.blog{color:#6c47ff;background:#f1edff}
+.nav-links .resource-menu-icon.center{color:#0f766e;background:#e5f7f3}
 .nav-links .resource-menu-icon.cases{color:#2563eb;background:#eaf2ff}
 .nav-links .resource-menu-icon.reports{color:#d97706;background:#fff4df}
 .nav-links .resource-menu-icon.faqs{color:#db2777;background:#fcebf4}
@@ -4529,6 +4530,7 @@
 .nav-links .resource-menu-copy strong{display:block;margin:0 0 5px;color:#1e293b;font:700 13.5px/1 'Inter',sans-serif}
 .nav-links .resource-menu-copy small{display:block;overflow:hidden;color:#8490a3;font:500 11px/1.2 'Inter',sans-serif;white-space:nowrap;text-overflow:ellipsis}
 .nav-links .resource-menu-arrow{color:#b0b7c4;font-size:10px;opacity:0;transform:translateX(-4px);transition:opacity .16s,transform .16s,color .16s}
+.nav-links .resources-menu-grid>a.resource-menu-faq{grid-column:1/-1;min-height:68px!important;background:linear-gradient(100deg,#fff,#fff7fb)!important}
 .nav-links .resources-menu-grid>a:hover .resource-menu-arrow,.nav-links .resources-menu-grid>button:hover .resource-menu-arrow{color:#6c47ff;opacity:1;transform:none}
 .nav-links .resources-menu-grid>a.is-current .resource-menu-arrow{color:#6c47ff;opacity:1;transform:none}
 

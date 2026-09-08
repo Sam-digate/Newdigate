@@ -5,7 +5,7 @@ var DIGATE_ROUTES={
   'l-home':DIGATE_HOME_ROUTE,
   'l-platform':DIGATE_INNER_PREFIX+'platform.html','l-digate':DIGATE_INNER_PREFIX+'digate.html','l-xdigate':DIGATE_INNER_PREFIX+'xdigate.html','l-cdigate':DIGATE_INNER_PREFIX+'cdigate.html',
   'l-solutions':DIGATE_INNER_PREFIX+'solutions.html','l-built-for':DIGATE_INNER_PREFIX+'built-for.html','l-china':DIGATE_INNER_PREFIX+'china.html','l-resources':DIGATE_INNER_PREFIX+'resources.html',
-  'l-blogs':DIGATE_INNER_PREFIX+'blogs.html','l-blog-detail':DIGATE_INNER_PREFIX+'blog-detail.html','l-use-cases':DIGATE_INNER_PREFIX+'use-cases.html',
+  'l-resource-center':DIGATE_INNER_PREFIX+'resource-center.html','l-blogs':DIGATE_INNER_PREFIX+'blogs.html','l-blog-detail':DIGATE_INNER_PREFIX+'blog-detail.html','l-reports':DIGATE_INNER_PREFIX+'reports.html','l-report-detail':DIGATE_INNER_PREFIX+'report-detail.html','l-use-cases':DIGATE_INNER_PREFIX+'use-cases.html',
   'l-use-case-detail':DIGATE_INNER_PREFIX+'use-case-detail.html','l-company':DIGATE_INNER_PREFIX+'company.html','l-demo':DIGATE_INNER_PREFIX+'demo.html'
 };
 function digateRoute(key){return DIGATE_ROUTES[key] || DIGATE_HOME_ROUTE;}
@@ -18,13 +18,13 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
 /* Resources is a family of pages; the FAQ is the first page to be published. */
 (function(){
   var menus=[];
-  document.querySelectorAll('.nav-links > a[data-go="l-resources"]').forEach(function(anchor,index){
+  document.querySelectorAll('.nav-links > a[data-go="l-resources"],.nav-links > a[data-go="l-resource-center"]').forEach(function(anchor,index){
     var wrapper=document.createElement('div');
     var trigger=document.createElement('button');
     var panel=document.createElement('div');
     var isCurrent=anchor.classList.contains('on');
     var currentPage=anchor.closest('.page');
-    var currentResourcePage=currentPage && (currentPage.id==='pg-l-blogs' || currentPage.id==='pg-l-blog-detail') ? 'blogs' : (currentPage && (currentPage.id==='pg-l-use-cases' || currentPage.id==='pg-l-use-case-detail') ? 'cases' : (isCurrent ? 'faqs' : ''));
+    var currentResourcePage=currentPage && currentPage.id==='pg-l-resource-center' ? 'center' : (currentPage && (currentPage.id==='pg-l-blogs' || currentPage.id==='pg-l-blog-detail') ? 'blogs' : (currentPage && (currentPage.id==='pg-l-reports' || currentPage.id==='pg-l-report-detail') ? 'reports' : (currentPage && (currentPage.id==='pg-l-use-cases' || currentPage.id==='pg-l-use-case-detail') ? 'cases' : (isCurrent ? 'faqs' : ''))));
     var panelId='resources-menu-'+index;
 
     wrapper.className='resource-nav';
@@ -38,10 +38,11 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
     panel.id=panelId;
     panel.setAttribute('aria-label','Resources');
     panel.innerHTML='<div class="resources-menu-grid">'+
+        '<a class="resource-menu-feature'+(currentResourcePage==='center'?' is-current':'')+'" href="'+digateRoute('l-resource-center')+'" data-go="l-resource-center"><span class="resource-menu-icon center"><i class="fa-solid fa-layer-group"></i></span><span class="resource-menu-copy"><strong>Resource</strong><small>Explore all resources</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
         '<a href="'+digateRoute('l-blogs')+'" data-go="l-blogs"'+(currentResourcePage==='blogs'?' class="is-current"':'')+'><span class="resource-menu-icon blog"><i class="fa-regular fa-pen-to-square"></i></span><span class="resource-menu-copy"><strong>Blogs</strong><small>Ideas &amp; perspectives</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
         '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases"'+(currentResourcePage==='cases'?' class="is-current"':'')+'><span class="resource-menu-icon cases"><i class="fa-regular fa-lightbulb"></i></span><span class="resource-menu-copy"><strong>Use Cases</strong><small>Use-case examples</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
-        '<button type="button" data-resource-pending><span class="resource-menu-icon reports"><i class="fa-regular fa-file-lines"></i></span><span class="resource-menu-copy"><strong>Reports</strong><small>Research &amp; insights</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></button>'+
-        '<a href="'+digateRoute('l-resources')+'" data-go="l-resources"'+(currentResourcePage==='faqs'?' class="is-current"':'')+'><span class="resource-menu-icon faqs"><i class="fa-regular fa-circle-question"></i></span><span class="resource-menu-copy"><strong>FAQs</strong><small>Quick answers</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+        '<a href="'+digateRoute('l-reports')+'" data-go="l-reports"'+(currentResourcePage==='reports'?' class="is-current"':'')+'><span class="resource-menu-icon reports"><i class="fa-regular fa-file-lines"></i></span><span class="resource-menu-copy"><strong>Reports</strong><small>Research &amp; insights</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+        '<a class="resource-menu-faq'+(currentResourcePage==='faqs'?' is-current':'')+'" href="'+digateRoute('l-resources')+'" data-go="l-resources"><span class="resource-menu-icon faqs"><i class="fa-regular fa-circle-question"></i></span><span class="resource-menu-copy"><strong>FAQs</strong><small>Quick answers</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
       '</div>';
 
     wrapper.appendChild(trigger);
@@ -199,7 +200,7 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
     item.setAttribute('role','link');
     item.tabIndex=0;
     item.setAttribute('aria-label','Read article: '+item.querySelector(item===featured?'h2':'h3').textContent.trim());
-    item.addEventListener('click',function(){prepareArticle(item);});
+    item.addEventListener('click',function(){prepareArticle(item);window.location.href=digateRoute('l-blog-detail');});
     item.addEventListener('keydown',function(event){if(event.key==='Enter' || event.key===' '){event.preventDefault();item.click();}});
   });
 
@@ -311,9 +312,10 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
       '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for">Built For</a>'+
       '<a href="'+digateRoute('l-china')+'" data-go="l-china">China</a>'+
       '<div class="mobile-resource-group"><span>Resources</span>'+
+        '<a href="'+digateRoute('l-resource-center')+'" data-go="l-resource-center">Resource</a>'+
         '<a href="'+digateRoute('l-blogs')+'" data-go="l-blogs">Blogs</a>'+
         '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases">Use Cases</a>'+
-        '<button type="button" aria-disabled="true">Reports</button>'+
+        '<a href="'+digateRoute('l-reports')+'" data-go="l-reports">Reports</a>'+
         '<a href="'+digateRoute('l-resources')+'" data-go="l-resources">FAQs</a></div>'+
       '<a href="'+digateRoute('l-company')+'" data-go="l-company">Company</a>';
     header.appendChild(panel);
@@ -1063,4 +1065,107 @@ document.querySelectorAll('[data-achieve-list]').forEach(function(list){
 
   var requestedCase=new URLSearchParams(window.location.search).get('case');
   if(requestedCase){renderCase(requestedCase);}
+})();
+
+/* Search the topic directory on the Resource page. */
+(function(){
+  var page=document.getElementById('pg-l-resource-center');
+  if(!page){return;}
+  var search=page.querySelector('[data-resource-center-search]');
+  var topics=[].slice.call(page.querySelectorAll('[data-resource-topic]'));
+  var empty=page.querySelector('[data-resource-topic-empty]');
+
+  function render(){
+    var query=(search && search.value || '').trim().toLowerCase();
+    var visible=0;
+    topics.forEach(function(button){
+      var match=!query || button.textContent.toLowerCase().indexOf(query)!==-1;
+      button.hidden=!match;
+      if(match){visible++;}
+    });
+    if(empty){empty.hidden=visible!==0;}
+  }
+
+  topics.forEach(function(button){
+    button.addEventListener('click',function(){
+      var showAll=button.getAttribute('data-resource-topic')==='all';
+      topics.forEach(function(item){
+        var active=!showAll && item===button;
+        item.classList.toggle('is-active',active);
+        item.setAttribute('aria-pressed',active?'true':'false');
+      });
+      if(showAll && search){search.value='';render();search.focus();}
+    });
+  });
+  if(search){search.addEventListener('input',render);}
+})();
+
+/* Reports directory and embedded PDF reader. */
+(function(){
+  var page=document.getElementById('pg-l-reports');
+  if(!page){return;}
+  var search=page.querySelector('[data-report-search]');
+  var filters=[].slice.call(page.querySelectorAll('[data-report-filter]'));
+  var items=[].slice.call(page.querySelectorAll('[data-report-item]'));
+  var count=page.querySelector('[data-report-count]');
+  var empty=page.querySelector('[data-report-empty]');
+  var activeFilter='all';
+
+  function storeReport(item){
+    var data={title:item.dataset.title,category:item.dataset.category,date:item.dataset.date,pdf:item.dataset.pdf};
+    try{sessionStorage.setItem('digate-report-detail',JSON.stringify(data));}catch(error){}
+  }
+
+  items.forEach(function(item){
+    item.dataset.go='l-report-detail';
+    item.setAttribute('role','link');
+    item.tabIndex=0;
+    item.setAttribute('aria-label','View report: '+item.dataset.title);
+    item.addEventListener('click',function(){storeReport(item);window.location.href=digateRoute('l-report-detail');});
+    item.addEventListener('keydown',function(event){if(event.key==='Enter' || event.key===' '){event.preventDefault();item.click();}});
+  });
+
+  function render(){
+    var query=(search && search.value || '').trim().toLowerCase();
+    var visible=0;
+    items.forEach(function(item){
+      var category=item.dataset.category || '';
+      var haystack=((item.dataset.search || '')+' '+item.textContent).toLowerCase();
+      var match=(activeFilter==='all' || category===activeFilter) && (!query || haystack.indexOf(query)>-1);
+      item.hidden=!match;
+      if(match){visible++;}
+    });
+    if(count){count.textContent=visible;}
+    if(empty){empty.hidden=visible!==0;}
+  }
+
+  filters.forEach(function(button){
+    button.addEventListener('click',function(){
+      activeFilter=button.dataset.reportFilter;
+      filters.forEach(function(item){var active=item===button;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',active?'true':'false');});
+      render();
+    });
+  });
+  if(search){search.addEventListener('input',render);}
+})();
+
+(function(){
+  var page=document.getElementById('pg-l-report-detail');
+  if(!page){return;}
+  var data=null;
+  try{data=JSON.parse(sessionStorage.getItem('digate-report-detail') || 'null');}catch(error){data=null;}
+  if(!data || !data.pdf){return;}
+  var title=page.querySelector('[data-report-detail-title]');
+  var category=page.querySelector('[data-report-detail-category]');
+  var date=page.querySelector('[data-report-detail-date]');
+  var frame=page.querySelector('[data-report-frame]');
+  var open=page.querySelector('[data-report-open]');
+  var download=page.querySelector('[data-report-download]');
+  if(title){title.textContent=data.title;}
+  if(category){category.textContent='Digate Report';}
+  if(date){date.textContent=data.date;}
+  if(frame){frame.src=data.pdf+'#view=FitH&toolbar=1';frame.title=data.title;}
+  if(open){open.href=data.pdf;}
+  if(download){download.href=data.pdf;}
+  document.title=data.title+' — Digate Reports';
 })();

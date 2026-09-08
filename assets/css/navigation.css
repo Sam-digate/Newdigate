@@ -225,6 +225,83 @@
   :is(#pg-l-china,#pg-l-cdigate) header.nav .nav-cta .btn-primary{padding-inline:12px;font-size:13px}
 }
 
+/* Resource page: use the exact shared navigation geometry and typography. */
+#pg-l-resource-center header.nav .nav-in{
+  box-sizing:border-box;
+  width:100%;
+  max-width:var(--wrap-nav);
+  margin-inline:auto;
+  padding-inline:var(--page-gutter);
+}
+
+#pg-l-resource-center .nav-links{gap:8px!important}
+
+#pg-l-resource-center .nav-links>a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 12px;
+  border:1px solid transparent;
+  border-radius:999px;
+  color:#334155!important;
+  background:transparent!important;
+  font:500 14.5px/1 'Inter',sans-serif!important;
+  white-space:nowrap;
+}
+
+#pg-l-resource-center .nav-links>a:hover,
+#pg-l-resource-center .nav-links>a.on{
+  color:#6C47FF!important;
+  border-color:transparent!important;
+  background:transparent!important;
+  font-weight:500!important;
+}
+
+#pg-l-resource-center .resource-nav{
+  flex:0 0 91px;
+  width:91px;
+}
+
+#pg-l-resource-center .resources-trigger,
+#pg-l-resource-center .resources-trigger.is-current{
+  width:91px;
+  padding:7px 0;
+  color:#6C47FF;
+  font:500 14.5px/1 'Inter',sans-serif;
+}
+
+#pg-l-resource-center header.nav .brand{
+  flex:0 0 102px;
+  width:102px!important;
+  min-width:102px!important;
+}
+
+#pg-l-resource-center header.nav .nav-cta{
+  display:flex;
+  justify-content:flex-end;
+  flex:0 0 125px;
+  width:125px;
+}
+
+#pg-l-resource-center header.nav .nav-cta .lang{display:none!important}
+
+@media(min-width:981px) and (max-width:1180px){
+  #pg-l-resource-center header.nav .nav-in{gap:12px}
+  #pg-l-resource-center header.nav .nav-links>a{padding-inline:4px}
+  #pg-l-resource-center header.nav .resources-trigger{padding-inline:0}
+}
+
+@media(min-width:1181px){
+  #pg-l-resource-center header.nav .nav-links>a{padding-inline:8px}
+}
+
+@media(max-width:1100px){
+  #pg-l-resource-center header.nav .nav-links{display:none}
+  #pg-l-resource-center header.nav .nav-cta{width:auto;flex:0 0 auto}
+  #pg-l-resource-center header.nav .menu-btn{min-height:40px;padding:9px 13px}
+  #pg-l-resource-center header.nav .mobile-site-menu a[aria-current="page"]{color:var(--violet);font-weight:700}
+}
+
 /* Shared hero title scale across primary site pages. */
 :is(
   #pg-l-home .hero-v1 h1,

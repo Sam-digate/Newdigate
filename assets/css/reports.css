@@ -1,0 +1,87 @@
+:is(#pg-l-reports,#pg-l-report-detail){--report-ink:#0f172a;--report-copy:#52627a;--report-line:#dfe6f1;color:var(--report-ink);background:#fff;font-family:var(--body);padding-top:70px}
+:is(#pg-l-reports,#pg-l-report-detail) *{box-sizing:border-box}
+:is(#pg-l-reports,#pg-l-report-detail) .wrap{max-width:1180px;margin:0 auto;padding-inline:28px}
+:is(#pg-l-reports,#pg-l-report-detail) a{text-decoration:none}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 12px 34px -30px rgba(15,23,42,.45)}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-in{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--wrap-nav);height:70px;margin-inline:auto;padding-inline:var(--page-gutter)}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-links{display:flex;align-items:center;gap:8px}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-links>a{display:inline-flex;align-items:center;justify-content:center;padding:7px 8px;color:#334155;font-size:14.5px;font-weight:500;line-height:1;white-space:nowrap}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .resource-nav{flex:0 0 91px;width:91px}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .resources-trigger{width:91px;padding:7px 0;font-weight:500}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;overflow:hidden!important}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta{display:flex;align-items:center;justify-content:flex-end;flex:0 0 125px}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta .lang{display:none}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta .btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 18px;border:0;border-radius:10px;background:linear-gradient(135deg,#3A71FF 0%,#7C3AED 100%);color:#fff;font-size:14px;font-weight:700;line-height:1;white-space:nowrap;box-shadow:0 12px 24px -16px rgba(108,71,255,.8)}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta .btn-primary:hover{background:linear-gradient(135deg,#2F62E8 0%,#5B3DEB 100%)}
+:is(#pg-l-reports,#pg-l-report-detail) .menu-btn{display:none}
+
+#pg-l-reports .report-hero{padding:76px 0 70px;border-bottom:1px solid #e6ebf3;background-color:#fafafd;background-image:radial-gradient(circle at 78% 28%,rgba(123,63,242,.14),transparent 44%),linear-gradient(to right,rgba(108,71,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(108,71,255,.045) 1px,transparent 1px);background-size:auto,36px 36px,36px 36px;text-align:center}
+#pg-l-reports .report-hero-copy{max-width:860px;margin:auto}
+#pg-l-reports .badge{display:inline-flex;margin-bottom:24px;padding:7px 14px;border:1px solid #d8ceff;border-radius:999px;background:#fff;color:#6042e8;font-size:12px;font-weight:700}
+#pg-l-reports .report-hero h1{margin:0;font-family:var(--display);font-size:44px;font-weight:800;line-height:1.15;letter-spacing:-.025em}
+#pg-l-reports .report-hero h1 span{background:linear-gradient(90deg,#2f6bff,#9736ff);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-l-reports .report-hero-copy p{max-width:740px;margin:20px auto 30px;color:var(--report-copy);font-size:17px;line-height:1.7}
+#pg-l-reports .report-search{position:relative;max-width:520px;margin:auto}
+#pg-l-reports .report-search i{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:#7d88a0;font-size:14px}
+#pg-l-reports .report-search input{width:100%;min-height:54px;padding:13px 18px 13px 48px;border:1px solid #dbe2ee;border-radius:14px;outline:0;background:#fff;color:#24304a;font:500 15px/1.3 var(--body);box-shadow:0 18px 40px -32px rgba(35,28,92,.48)}
+#pg-l-reports .report-search input:focus{border-color:#9e8bf9;box-shadow:0 0 0 4px rgba(108,71,255,.1)}
+
+#pg-l-reports .report-main{padding:72px 0 96px}
+#pg-l-reports .report-filters{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+#pg-l-reports .report-filters button{min-height:40px;padding:9px 13px;border:1px solid #e2e8f0;border-radius:11px;background:#fff;color:#687386;font:600 13px/1 var(--body);cursor:pointer}
+#pg-l-reports .report-filters button:hover,#pg-l-reports .report-filters button.is-active{color:#5b3deb;background:#f5f2ff;border-color:#cfc2ff}
+#pg-l-reports .report-filters p{display:inline-flex;gap:4px;margin:0 0 0 auto;color:#94a3b8;font-size:12px;font-weight:700}
+#pg-l-reports .report-filters strong{color:#5b3deb;font-size:13px}
+#pg-l-reports .report-featured{display:grid;grid-template-columns:minmax(0,.92fr) minmax(440px,1.08fr);gap:54px;align-items:center;padding:34px;border:1px solid #e0e6ef;border-radius:24px;background:#fff;box-shadow:0 28px 70px -54px rgba(15,23,42,.42);cursor:pointer;transition:.2s}
+#pg-l-reports .report-featured:hover,#pg-l-reports .report-card:hover{transform:translateY(-3px);border-color:#c7b9ff;box-shadow:0 34px 76px -52px rgba(83,50,230,.38)}
+#pg-l-reports .report-featured-copy{padding:18px 10px}
+#pg-l-reports .report-meta{display:flex;align-items:center;gap:12px;color:#8a96a8;font-size:11px;font-weight:700}
+#pg-l-reports .report-meta span{color:#6545ef;text-transform:uppercase;letter-spacing:.04em}
+#pg-l-reports .report-featured h2{margin:24px 0 16px;font-family:var(--display);font-size:34px;line-height:1.2;letter-spacing:-.03em}
+#pg-l-reports .report-featured-copy>p{margin:0 0 30px;color:var(--report-copy);font-size:16px;line-height:1.7}
+#pg-l-reports .report-read{display:inline-flex;align-items:center;gap:10px;color:#5b3deb;font-size:13px;font-weight:800}
+#pg-l-reports [data-report-item][hidden]{display:none}
+
+#pg-l-reports .report-cover{height:390px;overflow:hidden;border-radius:18px;background:#eef2ff}
+#pg-l-reports .report-cover img{display:block;width:100%;height:100%;object-fit:cover}
+
+#pg-l-reports .report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:64px;scroll-margin-top:96px}
+#pg-l-reports .report-card{display:grid;grid-template-columns:210px minmax(0,1fr);overflow:hidden;border:1px solid #e2e8f0;border-radius:19px;background:#fff;box-shadow:0 18px 46px -40px rgba(15,23,42,.4);cursor:pointer;transition:.2s}
+#pg-l-reports .report-card .report-cover{height:320px;border-radius:0}
+#pg-l-reports .report-card-body{display:flex;min-width:0;flex-direction:column;padding:28px}
+#pg-l-reports .report-card h3{margin:18px 0 12px;font-family:var(--display);font-size:20px;line-height:1.34;letter-spacing:-.02em}
+#pg-l-reports .report-card-body>p{margin:0;color:var(--report-copy);font-size:14px;line-height:1.6}
+#pg-l-reports .report-card-foot{display:flex;justify-content:flex-end;margin-top:auto;padding-top:22px;color:#5b3deb;font-size:12px;font-weight:700}
+#pg-l-reports .report-empty{padding:70px 24px;text-align:center;color:var(--report-copy)}
+#pg-l-reports .report-empty i{color:#6c47ff;font-size:28px}
+
+#pg-l-report-detail .report-reader{padding:48px 0 90px;background:#fff}
+#pg-l-report-detail .report-reader>.wrap{max-width:1060px}
+#pg-l-report-detail .report-back{display:inline-flex;align-items:center;gap:9px;margin-bottom:44px;color:#5b3deb;font-size:13px;font-weight:800}
+#pg-l-report-detail .report-back i{font-size:11px;transition:transform .18s ease}
+#pg-l-report-detail .report-back:hover i{transform:translateX(-3px)}
+#pg-l-report-detail .report-reader-head{max-width:950px;margin-bottom:64px}
+#pg-l-report-detail .report-reader h1{max-width:950px;margin:0 0 22px;font-family:var(--display);font-size:42px;font-weight:800;line-height:1.3;letter-spacing:-.025em}
+#pg-l-report-detail .report-detail-meta{display:flex;align-items:center;gap:10px;color:#94a3b8;font-size:12px;font-weight:700}
+#pg-l-report-detail .report-detail-meta span{color:#94a3b8;font:700 12px/1 var(--body);letter-spacing:0;text-transform:none}
+#pg-l-report-detail .report-detail-meta i{display:block;width:3px;height:3px;border-radius:50%;background:#cbd5e1}
+#pg-l-report-detail .report-reader time{color:#94a3b8;font-size:12px;font-weight:700}
+#pg-l-report-detail .report-reader-actions{display:flex;justify-content:flex-end;gap:10px;margin-bottom:16px}
+#pg-l-report-detail .report-reader-actions .btn{min-height:40px;padding:10px 15px;border-radius:10px;font-size:13px;font-weight:700}
+#pg-l-report-detail .report-reader-actions .btn-ghost{border:1px solid #ded7ff;background:#fff;color:#5b3deb}
+#pg-l-report-detail .report-reader-actions .btn-primary{border:0;background:linear-gradient(100deg,#2f6bff,#7b3ff2);color:#fff;box-shadow:0 14px 28px -20px rgba(83,47,225,.7)}
+#pg-l-report-detail .report-frame{height:min(78vh,900px);min-height:620px;overflow:hidden;border:1px solid #d9e0ec;border-radius:20px;background:#dfe4ec;box-shadow:0 28px 70px -52px rgba(15,23,42,.5)}
+#pg-l-report-detail .report-frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+
+:is(#pg-l-reports,#pg-l-report-detail) footer{padding:60px 0 38px;background:#111827;color:#f8fafc}
+:is(#pg-l-reports,#pg-l-report-detail) footer .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.14)}
+:is(#pg-l-reports,#pg-l-report-detail) footer .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;filter:brightness(0) invert(1);opacity:.94}
+:is(#pg-l-reports,#pg-l-report-detail) footer .brand .a{color:transparent!important}
+:is(#pg-l-reports,#pg-l-report-detail) footer p{max-width:34ch;color:rgba(226,232,240,.78);font-size:14px;line-height:1.6}
+:is(#pg-l-reports,#pg-l-report-detail) footer h4{margin-bottom:14px;color:rgba(199,210,254,.68);font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+:is(#pg-l-reports,#pg-l-report-detail) footer .fcol a{display:block;padding:5px 0;color:rgba(248,250,252,.86);font-size:14px}
+:is(#pg-l-reports,#pg-l-report-detail) footer .fb{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:24px;color:rgba(203,213,225,.66);font-size:13px}
+
+@media(max-width:1100px){:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-links{display:none}:is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta{width:auto;flex:0 0 auto}:is(#pg-l-reports,#pg-l-report-detail) .menu-btn{display:inline-flex}#pg-l-reports .report-featured{grid-template-columns:1fr;gap:26px}#pg-l-reports .report-cover{min-height:340px}#pg-l-reports .report-grid{grid-template-columns:1fr}}
+@media(max-width:680px){:is(#pg-l-reports,#pg-l-report-detail) .wrap{padding-inline:18px}#pg-l-reports .report-hero{padding:62px 0}#pg-l-reports .report-hero h1{font-size:clamp(36px,9vw,44px)}#pg-l-reports .report-main{padding:48px 0 70px}#pg-l-reports .report-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:5px}#pg-l-reports .report-filters>*{flex:none}#pg-l-reports .report-featured{padding:16px;border-radius:18px}#pg-l-reports .report-featured h2{font-size:27px}#pg-l-reports .report-cover{height:290px}#pg-l-reports .report-card{grid-template-columns:1fr}#pg-l-reports .report-card .report-cover{height:250px}#pg-l-report-detail .report-reader{padding:34px 0 64px}#pg-l-report-detail .report-back{margin-bottom:26px}#pg-l-report-detail .report-reader-head{margin-bottom:42px}#pg-l-report-detail .report-reader h1{font-size:34px}#pg-l-report-detail .report-reader-actions{width:100%;flex-direction:column}#pg-l-report-detail .report-reader-actions .btn{width:100%}#pg-l-report-detail .report-frame{min-height:520px;height:72vh}:is(#pg-l-reports,#pg-l-report-detail) footer .fg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#pg-l-reports *{transition:none!important}}
