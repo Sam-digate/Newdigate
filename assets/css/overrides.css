@@ -4543,8 +4543,9 @@
   outline:0!important;
 }
 #pg-l-home .home-complexity-content{
-  border:0!important;
-  box-shadow:none!important;
+  border:1px solid #D8CCFF!important;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FAF9FF 100%)!important;
+  box-shadow:0 20px 48px -42px rgba(79,50,217,.28)!important;
 }
 #pg-l-home .meet-digate-intro{
   border-top:0!important;
@@ -4561,6 +4562,9 @@
     linear-gradient(90deg,rgba(108,71,255,.045) 1px,transparent 1px),
     radial-gradient(circle at 78% 12%,rgba(108,71,255,.09),transparent 42%)!important;
   background-size:28px 28px,28px 28px,auto!important;
+}
+#pg-l-home .meet-layer-tabs{
+  background:#fff!important;
 }
 
 
