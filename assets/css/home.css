@@ -267,7 +267,7 @@
 #pg-l-home .meet-layers-wrap{padding-top:52px;padding-bottom:76px}
 #pg-l-home .meet-layers-head{margin:0 auto 40px;text-align:center}
 #pg-l-home .meet-layers-head h2{margin:0;font-size:52px;line-height:1.08;letter-spacing:0;color:var(--ink)}
-#pg-l-home .meet-layer-showcase{display:grid;grid-template-columns:minmax(340px,.82fr) minmax(0,1.38fr);min-height:530px;border:1px solid var(--line);border-radius:28px;background:var(--tint-soft);overflow:hidden}
+#pg-l-home .meet-layer-showcase{display:grid;grid-template-columns:minmax(340px,.82fr) minmax(0,1.38fr);min-height:530px;border:1px solid var(--line);border-radius:28px;background:var(--tint-soft);box-shadow:0 30px 72px -42px rgba(15,23,42,.36);overflow:hidden}
 #pg-l-home .meet-layer-tabs{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:28px 24px}
 #pg-l-home .meet-layer-tab{position:relative;display:grid;gap:6px;width:100%;min-height:112px;padding:16px 18px;border:1px solid transparent;border-radius:16px;background:transparent;color:var(--ink);font-family:var(--body);text-align:left;cursor:pointer;transition:background-color 200ms ease,border-color 200ms ease,transform 200ms ease,box-shadow 200ms ease}
 #pg-l-home .meet-layer-tab:hover{transform:translateY(-2px);border-color:var(--line);background:rgba(255,255,255,.7)}
@@ -765,6 +765,15 @@
 #pg-l-home .engine-story-image{position:relative;align-self:start;min-width:0;width:100%;aspect-ratio:4/3;margin:0;border:1px solid #fff;border-radius:26px;background:#EEF2F7;box-shadow:0 28px 64px -34px rgba(49,46,129,.34);overflow:hidden}
 #pg-l-home .engine-story-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 #pg-l-home .engine-story-image:hover img{transform:scale(1.025)}
+
+/* Shared typography for Home's primary content-section headings. */
+#pg-l-home .home-section-title.home-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
 @media(max-width:1100px){#pg-l-home .engine-story-layout{grid-template-columns:1fr;gap:36px}#pg-l-home .engine-story-copy{max-width:760px}#pg-l-home .engine-story-image{max-width:760px;margin:0 auto}}
 @media(max-width:640px){#pg-l-home .engine-story-image{border-radius:20px}}
 @media(max-width:980px){#pg-l-home .model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

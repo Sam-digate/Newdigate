@@ -3827,9 +3827,9 @@
 @media(max-width:980px){#pg-l-xdigate .withyou.human-ai-card{grid-template-columns:1fr;gap:32px;padding:0}}
 @media(max-width:760px){#pg-l-xdigate .xdigate-comparison-section{padding:60px 0 66px}#pg-l-xdigate .xdigate-comparison-head{margin-bottom:26px}#pg-l-xdigate .xdigate-comparison-board{grid-template-columns:1fr;gap:18px;max-width:560px}#pg-l-xdigate .xdigate-comparison-card{min-height:0;padding:26px 24px;border-radius:20px}}
 @media(max-width:560px){#pg-l-xdigate .xdigate-human-ai-section{padding:60px 0}#pg-l-xdigate .xdigate-summary-section{padding:60px 0 68px}#pg-l-xdigate .withyou.human-ai-card{padding:0;border-radius:0}}
-#pg-l-xdigate .withyou h2{font-size:clamp(34px,4.2vw,50px)!important;line-height:1.12!important;letter-spacing:0!important;margin:12px 0 18px!important;color:#0F172A!important;max-width:680px}
+#pg-l-xdigate .withyou h2{font-size:clamp(34px,4.2vw,50px);line-height:1.12;letter-spacing:0;margin:12px 0 18px;color:#0F172A;max-width:680px}
 #pg-l-xdigate .withyou p{max-width:620px;font-size:16px;line-height:1.58;color:var(--ink-soft);margin:0}
-#pg-l-xdigate .withyou .human-ai-intro{font-size:18px}
+#pg-l-xdigate .withyou .human-ai-intro{font-size:16px}
 #pg-l-xdigate .human-ai-copy{min-width:0}
 #pg-l-xdigate .human-ai-roles{display:grid;gap:12px;margin-top:22px}
 #pg-l-xdigate .human-ai-roles p{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.8);box-shadow:0 12px 28px -24px rgba(15,23,42,.2)}
@@ -5093,7 +5093,7 @@
   position:relative;
   isolation:isolate;
   background:#FAFAFD;
-  padding:72px 0 92px;
+  padding:34px 0 46px;
   overflow:hidden;
 }
 #pg-l-built-for #pg-l-built-for--demo::before{
@@ -6296,4 +6296,93 @@
   #pg-l-company .company-why-media img,
   #pg-l-company .company-why-card{transition:none}
   #pg-l-company .company-why-media:hover img{transform:none}
+}
+
+/* Shared typography for Platform's primary content-section headings. */
+#pg-l-platform .platform-approach-head h2.platform-section-title,
+#pg-l-platform #pg-l-platform--layers h2.platform-section-title,
+#pg-l-platform .engine-hub-head h2.platform-section-title,
+#pg-l-platform #pg-l-platform--learning-flow h2.platform-section-title,
+#pg-l-platform #pg-l-platform--enterprise h2.platform-section-title,
+#pg-l-platform #pg-l-platform--team h2.platform-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for i-Digate's primary content-section headings. */
+#pg-l-digate .digate-challenge-copy h2.digate-section-title,
+#pg-l-digate .digate-truth-copy h2.digate-section-title,
+#pg-l-digate .digate-knowledge-head h2.digate-section-title,
+#pg-l-digate .digate-suite-head h2.digate-section-title,
+#pg-l-digate .digate-execution-copy h2.digate-section-title,
+#pg-l-digate .digate-matters-copy h2.digate-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for X-Digate's primary content-section headings. */
+#pg-l-xdigate .xdigate-challenge-copy h2.xdigate-section-title,
+#pg-l-xdigate #pg-l-xdigate--departments h2.xdigate-section-title,
+#pg-l-xdigate .human-ai-copy h2.xdigate-section-title,
+#pg-l-xdigate .xdigate-comparison-head h2.xdigate-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for C-Digate's primary content-section headings. */
+#pg-l-cdigate .sh h2.cdigate-section-title,
+#pg-l-cdigate .belief h2.cdigate-section-title,
+#pg-l-cdigate .offer > h2.cdigate-section-title,
+#pg-l-cdigate .proof h2.cdigate-section-title,
+#pg-l-cdigate .cd-audience-head h2.cdigate-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for Solutions' primary content-section heading. */
+#pg-l-solutions .solutions-engine-case-copy h2.solutions-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for Built For's primary content-section headings. */
+#pg-l-built-for .built-for-models-head h2.built-for-section-title,
+#pg-l-built-for .built-for-industries-head h2.built-for-section-title,
+#pg-l-built-for .built-for-global-copy h2.built-for-section-title,
+#pg-l-built-for .built-for-why-head h2.built-for-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for China's primary content-section headings. */
+#pg-l-china .origin h2.china-section-title,
+#pg-l-china .sh h2.china-section-title,
+#pg-l-china .comp h2.china-section-title{
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+/* Shared typography for Company's primary content-section headings. */
+#pg-l-company .company-why-head h2.company-section-title,
+#pg-l-company .company-origin-copy .company-origin-head h2.company-section-title,
+#pg-l-company .company-leadership-head h2.company-section-title,
+#pg-l-company .company-ai-future-copy h2.company-section-title{
+  font-size:clamp(36px,3.6vw,44px)!important;
+  font-weight:800!important;
+  line-height:1.12!important;
+  letter-spacing:0!important;
 }
