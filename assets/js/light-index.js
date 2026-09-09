@@ -100,6 +100,67 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
   });
 })();
 
+/* Manual, infinitely wrapping X-Digate agent switcher. */
+(function(){
+  var carousel=document.querySelector('#pg-l-xdigate [data-agent-carousel]');
+  if(!carousel){return;}
+  var track=carousel.querySelector('.xdigate-agent-gallery');
+  var previous=carousel.querySelector('[data-agent-carousel-prev]');
+  var next=carousel.querySelector('[data-agent-carousel-next]');
+  var moving=false;
+
+  function stepSize(){
+    var card=track.querySelector('.xdigate-agent-card');
+    if(!card){return 0;}
+    var styles=window.getComputedStyle(track);
+    return card.getBoundingClientRect().width+(parseFloat(styles.columnGap || styles.gap) || 0);
+  }
+
+  function finish(callback){
+    var completed=false;
+    function done(){
+      if(completed){return;}
+      completed=true;
+      track.removeEventListener('transitionend',done);
+      callback();
+      moving=false;
+    }
+    track.addEventListener('transitionend',done);
+    window.setTimeout(done,480);
+  }
+
+  function showNext(){
+    if(moving){return;}
+    moving=true;
+    track.style.transform='translateX(-'+stepSize()+'px)';
+    finish(function(){
+      track.style.transition='none';
+      track.appendChild(track.firstElementChild);
+      track.style.transform='translateX(0)';
+      track.offsetWidth;
+      track.style.transition='';
+    });
+  }
+
+  function showPrevious(){
+    if(moving){return;}
+    moving=true;
+    var step=stepSize();
+    track.style.transition='none';
+    track.insertBefore(track.lastElementChild,track.firstElementChild);
+    track.style.transform='translateX(-'+step+'px)';
+    track.offsetWidth;
+    track.style.transition='';
+    window.requestAnimationFrame(function(){
+      track.style.transform='translateX(0)';
+      finish(function(){});
+    });
+  }
+
+  if(next){next.addEventListener('click',showNext);}
+  if(previous){previous.addEventListener('click',showPrevious);}
+})();
+
 (function(){
   document.querySelectorAll('[data-demo-preview]').forEach(function(preview){
     var tabs=[].slice.call(preview.querySelectorAll('[data-demo-preview-tab]'));
