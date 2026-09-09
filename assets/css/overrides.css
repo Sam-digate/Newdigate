@@ -6511,3 +6511,123 @@
 #pg-l-built-for .built-for-hero .hero-pill{
   display:inline-flex!important;
 }
+
+/* Platform capability carousel: five connected views, with tabs and autoplay. */
+#pg-l-platform .platform-intelligence-carousel{
+  width:100vw;
+  margin:32px 0 0 calc(50% - 50vw);
+}
+#pg-l-platform .platform-intelligence-tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:0 auto 26px;
+  padding:8px 18px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+#pg-l-platform .platform-intelligence-tabs::-webkit-scrollbar{display:none}
+#pg-l-platform .platform-intelligence-tabs button{
+  flex:0 0 auto;
+  min-height:40px;
+  padding:9px 16px;
+  border:1px solid #D7DDE8;
+  border-radius:10px;
+  background:#fff;
+  color:#1E293B;
+  font:700 13px/1.2 var(--body);
+  cursor:pointer;
+  transition:border-color .25s ease,color .25s ease,background-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+#pg-l-platform .platform-intelligence-tabs button:hover{
+  transform:translateY(-1px);
+  border-color:#9D87FF;
+  color:#5B3DEB;
+}
+#pg-l-platform .platform-intelligence-tabs button.is-active{
+  border-color:#6C47FF;
+  background:#F7F4FF;
+  color:#5B3DEB;
+  box-shadow:none;
+}
+#pg-l-platform .platform-intelligence-tabs button:focus-visible{
+  outline:3px solid rgba(108,71,255,.22);
+  outline-offset:3px;
+}
+#pg-l-platform .platform-intelligence-stage{
+  position:relative;
+  height:410px;
+  overflow:visible;
+}
+#pg-l-platform .platform-intelligence-slide{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:clamp(420px,28.2vw,540px);
+  aspect-ratio:813/539;
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.92);
+  border-radius:22px;
+  background:#EEF2FF;
+  box-shadow:0 26px 60px -34px rgba(30,41,59,.48);
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.72);
+  transition:left .65s cubic-bezier(.22,1,.36,1),opacity .45s ease,transform .65s cubic-bezier(.22,1,.36,1),filter .45s ease;
+  pointer-events:none;
+}
+#pg-l-platform .platform-intelligence-slide img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+#pg-l-platform .platform-intelligence-slide.is-active{
+  z-index:3;
+  left:50%;
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+  filter:none;
+}
+#pg-l-platform .platform-intelligence-slide.is-prev,
+#pg-l-platform .platform-intelligence-slide.is-next,
+#pg-l-platform .platform-intelligence-slide.is-prev-far,
+#pg-l-platform .platform-intelligence-slide.is-next-far{
+  z-index:2;
+  opacity:.82;
+  filter:saturate(.84);
+  pointer-events:auto;
+  cursor:pointer;
+}
+#pg-l-platform .platform-intelligence-slide.is-prev{
+  left:calc(25% - clamp(21px,1.41vw,27px));
+  transform:translate(-50%,-50%) scale(.8);
+}
+#pg-l-platform .platform-intelligence-slide.is-next{
+  left:calc(75% + clamp(21px,1.41vw,27px));
+  transform:translate(-50%,-50%) scale(.8);
+}
+#pg-l-platform .platform-intelligence-slide.is-prev-far,
+#pg-l-platform .platform-intelligence-slide.is-next-far{
+  z-index:1;
+  opacity:.42;
+  transform:translate(-50%,-50%) scale(.8);
+  filter:saturate(.72);
+}
+#pg-l-platform .platform-intelligence-slide.is-prev-far{left:0}
+#pg-l-platform .platform-intelligence-slide.is-next-far{left:100%}
+@media(max-width:760px){
+  #pg-l-platform .platform-intelligence-carousel{margin-top:18px}
+  #pg-l-platform .platform-intelligence-tabs{justify-content:flex-start;margin-bottom:14px;padding:8px 2px}
+  #pg-l-platform .platform-intelligence-tabs button{min-height:38px;padding:8px 13px;font-size:12px}
+  #pg-l-platform .platform-intelligence-stage{height:min(74vw,330px)}
+  #pg-l-platform .platform-intelligence-slide{width:78vw;border-radius:16px}
+  #pg-l-platform .platform-intelligence-slide.is-prev{left:-38%}
+  #pg-l-platform .platform-intelligence-slide.is-next{left:138%}
+  #pg-l-platform .platform-intelligence-slide.is-prev-far,
+  #pg-l-platform .platform-intelligence-slide.is-next-far{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  #pg-l-platform .platform-intelligence-tabs button,
+  #pg-l-platform .platform-intelligence-slide{transition:none}
+}
