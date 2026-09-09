@@ -2459,8 +2459,8 @@
 
 #pg-l-company .company-origin-layout{
   display:grid;
-  grid-template-columns:minmax(0,1.08fr) minmax(480px,.92fr);
-  gap:48px;
+  grid-template-columns:minmax(0,1fr) 484px;
+  gap:92px;
   align-items:center;
   max-width:var(--wrap);
   margin:0 auto;
