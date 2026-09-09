@@ -6344,6 +6344,17 @@
   letter-spacing:0;
 }
 
+#pg-l-digate .digate-execution-copy h2.digate-section-title{
+  font-size:clamp(32px,3vw,36px);
+}
+#pg-l-digate .digate-execution-title-line{
+  display:block;
+  white-space:nowrap;
+}
+@media(max-width:560px){
+  #pg-l-digate .digate-execution-title-line{font-size:clamp(16px,5.3vw,28px)}
+}
+
 /* Shared typography for X-Digate's primary content-section headings. */
 #pg-l-xdigate .xdigate-challenge-copy h2.xdigate-section-title,
 #pg-l-xdigate #pg-l-xdigate--departments h2.xdigate-section-title,
@@ -6405,6 +6416,247 @@
   font-weight:800!important;
   line-height:1.12!important;
   letter-spacing:0!important;
+}
+
+/* Company: one tabbed narrative for belief, system, and principles. */
+#pg-l-company .company-thinking-section{
+  padding:86px 0 92px;
+  background:#FAFAFD;
+}
+
+#pg-l-company .company-thinking-head{
+  max-width:900px;
+  margin:0 auto 34px;
+  text-align:center;
+}
+
+#pg-l-company .company-thinking-head h2{
+  margin:0;
+  color:#0F172A;
+  font-size:clamp(36px,3.6vw,44px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+#pg-l-company .company-thinking-head p{
+  max-width:720px;
+  margin:16px auto 0;
+  color:#64748B;
+  font-size:17px;
+  line-height:1.65;
+}
+
+#pg-l-company .company-thinking-explorer{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+#pg-l-company .company-thinking-tabs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-bottom:1px solid #DCE3EF;
+}
+
+#pg-l-company .company-thinking-tab{
+  position:relative;
+  min-height:58px;
+  padding:16px 20px;
+  border:0;
+  color:#64748B;
+  background:transparent;
+  font-family:var(--display);
+  font-size:15px;
+  font-weight:800;
+  line-height:1.25;
+  cursor:pointer;
+  transition:color .2s ease,background .2s ease;
+}
+
+#pg-l-company .company-thinking-tab::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  bottom:-1px;
+  left:18px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#2672FF,#9736FF);
+  opacity:0;
+  transform:scaleX(.45);
+  transition:opacity .2s ease,transform .2s ease;
+}
+
+#pg-l-company .company-thinking-tab:hover{color:#3F2AB5;background:#F7F5FF}
+#pg-l-company .company-thinking-tab.is-active{
+  color:#5A3CEC;
+  background:linear-gradient(180deg,rgba(247,245,255,0),#F7F5FF);
+}
+#pg-l-company .company-thinking-tab.is-active::after{opacity:1;transform:scaleX(1)}
+#pg-l-company .company-thinking-tab:focus-visible{outline:2px solid #6C47FF;outline-offset:-4px}
+
+#pg-l-company .company-thinking-panels{padding-top:24px}
+#pg-l-company .company-thinking-panel[hidden]{display:none}
+#pg-l-company .company-thinking-panel{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(420px,1fr);
+  column-gap:16px;
+  min-height:500px;
+  padding:0;
+  overflow:hidden;
+  border:1px solid #DCE3EF;
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 30px 72px -46px rgba(15,23,42,.42);
+  animation:companyThinkingIn .28s ease both;
+}
+
+#pg-l-company .company-thinking-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:50px 40px;
+}
+
+#pg-l-company .company-thinking-copy>h2{
+  margin:0;
+  color:#0F172A;
+  font-size:32px;
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:0;
+}
+
+#pg-l-company .company-thinking-intro{
+  max-width:62ch;
+  margin:18px 0 0;
+  color:#64748B;
+  font-size:16px;
+  line-height:1.65;
+}
+
+#pg-l-company .company-thinking-copy .company-belief-warning-flow{margin-top:24px}
+#pg-l-company .company-thinking-copy .company-belief-step{text-align:left}
+#pg-l-company .company-thinking-copy .company-belief-step span{justify-content:flex-start}
+#pg-l-company .company-thinking-copy .company-belief-foundation{margin-top:24px}
+#pg-l-company .company-thinking-copy .company-engine-copy{margin-top:26px;padding-bottom:0}
+#pg-l-company .company-thinking-copy .company-build-principles-list{width:100%;max-width:none;margin:20px 0 0;gap:10px}
+#pg-l-company .company-thinking-copy .company-build-principles-list .achieve-toggle{min-height:58px;padding:9px 14px;grid-template-columns:40px minmax(0,1fr) 26px;gap:12px}
+#pg-l-company .company-thinking-copy .company-build-principles-list .achieve-ic{width:40px;height:40px}
+#pg-l-company .company-thinking-copy .company-build-principles-list .achieve-item.is-active .achieve-panel{margin-top:-14px}
+#pg-l-company .company-thinking-copy .company-build-principles-list .achieve-panel p{padding:0 18px 14px 66px}
+
+#pg-l-company .company-thinking-statement{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  gap:14px;
+  align-items:center;
+  margin-top:14px;
+  padding:16px 18px;
+  border:1px solid #D8CCFF;
+  border-radius:15px;
+  background:#F7F5FF;
+}
+
+#pg-l-company .company-thinking-statement>i{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,#2672FF,#7C3AED);
+}
+
+#pg-l-company .company-thinking-statement p{margin:0;color:#334155;font-size:14px;line-height:1.5}
+#pg-l-company .company-thinking-statement strong{display:block;color:#0F172A;font-size:15px}
+#pg-l-company .company-thinking-statement span{display:block;margin-top:2px}
+
+#pg-l-company .company-thinking-media{
+  position:relative;
+  align-self:center;
+  min-width:0;
+  width:auto;
+  height:auto;
+  min-height:0;
+  aspect-ratio:4/3;
+  margin:28px 28px 28px 0;
+  overflow:hidden;
+  border-radius:24px;
+  background:#E7ECF5;
+  box-shadow:0 30px 64px -38px rgba(15,23,42,.45);
+}
+
+#pg-l-company .company-thinking-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+  object-fit:cover;
+  object-position:center;
+  background:#E7ECF5;
+}
+
+#pg-l-company .company-thinking-media figcaption{
+  position:absolute;
+  right:28px;
+  bottom:28px;
+  left:28px;
+  z-index:1;
+  color:#fff;
+}
+
+#pg-l-company .company-thinking-media figcaption span{
+  display:block;
+  margin-bottom:7px;
+  color:#C7D2FE;
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+
+#pg-l-company .company-thinking-media figcaption strong{
+  display:block;
+  font-family:var(--display);
+  font-size:18px;
+  line-height:1.4;
+}
+
+@keyframes companyThinkingIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+
+@media(max-width:980px){
+  #pg-l-company .company-thinking-panel{grid-template-columns:1fr;column-gap:0;min-height:0}
+  #pg-l-company .company-thinking-media{height:auto;min-height:0;margin:0 28px 28px;aspect-ratio:4/3}
+  #pg-l-company .company-thinking-media img{height:100%;min-height:0}
+}
+
+@media(max-width:640px){
+  #pg-l-company .company-thinking-section{padding:66px 0 72px}
+  #pg-l-company .company-thinking-head{margin-bottom:26px;text-align:left}
+  #pg-l-company .company-thinking-head p{font-size:16px}
+  #pg-l-company .company-thinking-tabs{display:flex;overflow-x:auto;scrollbar-width:none}
+  #pg-l-company .company-thinking-tabs::-webkit-scrollbar{display:none}
+  #pg-l-company .company-thinking-tab{flex:0 0 auto;min-width:170px;padding:15px 18px}
+  #pg-l-company .company-thinking-panels{padding-top:18px}
+  #pg-l-company .company-thinking-panel{border-radius:20px}
+  #pg-l-company .company-thinking-copy{padding:30px 22px}
+  #pg-l-company .company-thinking-copy>h2{font-size:32px}
+  #pg-l-company .company-thinking-copy .company-belief-warning-flow{grid-template-columns:1fr 1fr}
+  #pg-l-company .company-thinking-media{height:auto;min-height:0;margin:0 18px 18px;aspect-ratio:4/3}
+  #pg-l-company .company-thinking-media img{height:100%;min-height:0}
+  #pg-l-company .company-thinking-media figcaption{right:22px;bottom:22px;left:22px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #pg-l-company .company-thinking-panel{animation:none}
+  #pg-l-company .company-thinking-tab,#pg-l-company .company-thinking-tab::after{transition:none}
 }
 
 /* One interaction and typography system for primary page-hero actions. */

@@ -519,6 +519,39 @@ document.querySelectorAll('[data-achieve-list]').forEach(function(list){
   });
 });
 
+/* Company belief, system, and principles tabs. */
+document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explorer){
+  var tabs=[].slice.call(explorer.querySelectorAll('[role="tab"]'));
+  var panels=[].slice.call(explorer.querySelectorAll('[role="tabpanel"]'));
+  if(!tabs.length || tabs.length!==panels.length){return;}
+
+  function activate(index,moveFocus){
+    tabs.forEach(function(tab,tabIndex){
+      var active=tabIndex===index;
+      tab.classList.toggle('is-active',active);
+      tab.setAttribute('aria-selected',active?'true':'false');
+      tab.setAttribute('tabindex',active?'0':'-1');
+      panels[tabIndex].hidden=!active;
+      panels[tabIndex].classList.toggle('is-active',active);
+    });
+    if(moveFocus){tabs[index].focus();}
+  }
+
+  tabs.forEach(function(tab,index){
+    tab.addEventListener('click',function(){activate(index,false);});
+    tab.addEventListener('keydown',function(event){
+      var next=index;
+      if(event.key==='ArrowRight'){next=(index+1)%tabs.length;}
+      else if(event.key==='ArrowLeft'){next=(index-1+tabs.length)%tabs.length;}
+      else if(event.key==='Home'){next=0;}
+      else if(event.key==='End'){next=tabs.length-1;}
+      else{return;}
+      event.preventDefault();
+      activate(next,true);
+    });
+  });
+});
+
 /* Meet Digate connected-layer tabs. */
 (function(){
   document.querySelectorAll('[data-meet-layer-tabs]').forEach(function(showcase){
