@@ -6406,3 +6406,108 @@
   line-height:1.12!important;
   letter-spacing:0!important;
 }
+
+/* One interaction and typography system for primary page-hero actions. */
+.hero-action{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  box-sizing:border-box;
+  height:48px!important;
+  min-height:48px!important;
+  padding:0 26px!important;
+  border-radius:12px!important;
+  font-family:var(--body)!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-decoration:none!important;
+  white-space:nowrap;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease!important;
+}
+.hero-action-primary{
+  border:1px solid transparent!important;
+  color:#fff!important;
+  background:linear-gradient(135deg,#3A71FF 0%,#7C3AED 100%)!important;
+  box-shadow:0 16px 34px -20px rgba(58,113,255,.52),0 12px 28px -22px rgba(108,71,255,.58)!important;
+}
+.hero-action-secondary{
+  border:1px solid #DCE3EE!important;
+  color:#334155!important;
+  background:#fff!important;
+  box-shadow:0 5px 14px rgba(15,23,42,.045)!important;
+}
+.hero-action:hover{
+  transform:translateY(-2px)!important;
+}
+.hero-action-primary:hover{
+  background:linear-gradient(135deg,#2F62E8 0%,#5B3DEB 100%)!important;
+  box-shadow:0 20px 40px -22px rgba(58,113,255,.64),0 16px 32px -24px rgba(108,71,255,.72)!important;
+}
+.hero-action-secondary:hover{
+  border-color:#BCAEFF!important;
+  color:#5B3DEB!important;
+  background:#FAF9FF!important;
+  box-shadow:0 12px 24px -18px rgba(68,45,170,.38)!important;
+}
+.hero-action:focus-visible{
+  outline:3px solid rgba(108,71,255,.24)!important;
+  outline-offset:3px!important;
+}
+.hero-action:active{
+  transform:translateY(0)!important;
+  box-shadow:none!important;
+}
+.hero-action i{
+  transition:transform .2s ease;
+}
+.hero-action:hover i{
+  transform:translateX(3px);
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-action,.hero-action i{transition:none!important}
+}
+
+/* Shared capsule treatment for page heroes only. */
+.hero-pill{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  box-sizing:border-box;
+  width:max-content!important;
+  height:34px!important;
+  min-height:34px!important;
+  margin:0 0 24px!important;
+  padding:0 14px!important;
+  border:1px solid #D8CCFF!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.88)!important;
+  color:#4F32D9!important;
+  box-shadow:0 6px 18px -14px rgba(70,45,175,.38)!important;
+  font-family:var(--body)!important;
+  font-size:12px!important;
+  font-style:normal!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-align:center!important;
+  text-transform:none!important;
+  white-space:nowrap;
+}
+.hero-pill i,
+.hero-pill::before{
+  color:#6847F5!important;
+  font-size:12px!important;
+  line-height:1!important;
+}
+#pg-l-xdigate .xdigate-hero-v1 .hero-pill::after,
+#pg-l-solutions .solutions-hero-v1 .hero-pill::after,
+#pg-l-built-for .built-for-hero .hero-pill::after{
+  content:none!important;
+}
+#pg-l-built-for .built-for-hero .hero-pill{
+  display:inline-flex!important;
+}
