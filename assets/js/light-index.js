@@ -360,24 +360,28 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
     if(!menuButton || !nav){return;}
     var panel=document.createElement('nav');
     var panelId='mobile-site-menu-'+index;
+    var resourcePanelId=panelId+'-resources';
     panel.className='mobile-site-menu';
     panel.id=panelId;
     panel.setAttribute('aria-label','Mobile navigation');
     panel.setAttribute('aria-hidden','true');
     panel.innerHTML='<a href="'+digateRoute('l-home')+'" data-go="l-home">Home</a>'+
       '<a href="'+digateRoute('l-platform')+'" data-go="l-platform">Platform</a>'+
-      '<a href="'+digateRoute('l-digate')+'" data-go="l-digate">Digate</a>'+
+      '<a href="'+digateRoute('l-digate')+'" data-go="l-digate">i-Digate</a>'+
       '<a href="'+digateRoute('l-xdigate')+'" data-go="l-xdigate">X-Digate</a>'+
       '<a href="'+digateRoute('l-cdigate')+'" data-go="l-cdigate">C-Digate</a>'+
       '<a href="'+digateRoute('l-solutions')+'" data-go="l-solutions">Solutions</a>'+
       '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for">Built For</a>'+
       '<a href="'+digateRoute('l-china')+'" data-go="l-china">China</a>'+
-      '<div class="mobile-resource-group"><span>Resources</span>'+
-        '<a href="'+digateRoute('l-resource-center')+'" data-go="l-resource-center">Resource</a>'+
-        '<a href="'+digateRoute('l-blogs')+'" data-go="l-blogs">Blogs</a>'+
-        '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases">Use Cases</a>'+
-        '<a href="'+digateRoute('l-reports')+'" data-go="l-reports">Reports</a>'+
-        '<a href="'+digateRoute('l-resources')+'" data-go="l-resources">FAQs</a></div>'+
+      '<div class="mobile-resource-group">'+
+        '<button class="mobile-resource-toggle" type="button" aria-expanded="false" aria-controls="'+resourcePanelId+'"><span>Resources</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>'+
+        '<div class="mobile-resource-links" id="'+resourcePanelId+'" hidden>'+
+          '<a href="'+digateRoute('l-resource-center')+'" data-go="l-resource-center">Resource</a>'+
+          '<a href="'+digateRoute('l-blogs')+'" data-go="l-blogs">Blogs</a>'+
+          '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases">Use Cases</a>'+
+          '<a href="'+digateRoute('l-reports')+'" data-go="l-reports">Reports</a>'+
+          '<a href="'+digateRoute('l-resources')+'" data-go="l-resources">FAQs</a>'+
+        '</div></div>'+
       '<a href="'+digateRoute('l-company')+'" data-go="l-company">Company</a>';
     header.appendChild(panel);
     var currentPage=header.closest('.page');
@@ -386,8 +390,19 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
     });
     menuButton.setAttribute('aria-expanded','false');
     menuButton.setAttribute('aria-controls',panelId);
+    var resourceGroup=panel.querySelector('.mobile-resource-group');
+    var resourceToggle=panel.querySelector('.mobile-resource-toggle');
+    var resourceLinks=panel.querySelector('.mobile-resource-links');
+
+    function closeResources(){
+      if(!resourceGroup || !resourceToggle || !resourceLinks){return;}
+      resourceGroup.classList.remove('is-open');
+      resourceToggle.setAttribute('aria-expanded','false');
+      resourceLinks.hidden=true;
+    }
 
     function closePanel(){
+      closeResources();
       panel.classList.remove('is-open');
       panel.setAttribute('aria-hidden','true');
       menuButton.setAttribute('aria-expanded','false');
@@ -404,6 +419,15 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
       panel.setAttribute('aria-hidden',open?'false':'true');
       menuButton.setAttribute('aria-expanded',open?'true':'false');
     });
+
+    if(resourceToggle && resourceGroup && resourceLinks){
+      resourceToggle.addEventListener('click',function(){
+        var open=!resourceGroup.classList.contains('is-open');
+        resourceGroup.classList.toggle('is-open',open);
+        resourceToggle.setAttribute('aria-expanded',open?'true':'false');
+        resourceLinks.hidden=!open;
+      });
+    }
 
     panel.querySelectorAll('[data-go]').forEach(function(link){link.addEventListener('click',closePanel);});
     document.addEventListener('click',function(event){if(!header.contains(event.target)){closePanel();}});
@@ -1274,6 +1298,33 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
     });
   });
   if(search){search.addEventListener('input',render);}
+})();
+
+/* Preserve the desktop architecture composition and scale it to the mobile viewport. */
+(function(){
+  var shell=document.querySelector('#pg-l-home .arch-scale-shell');
+  var architecture=shell && shell.querySelector('.arch-window');
+  if(!shell || !architecture){return;}
+
+  var mobileQuery=window.matchMedia('(max-width: 640px)');
+  var frameWidth=600;
+
+  function sizeArchitecture(){
+    if(!mobileQuery.matches){
+      shell.style.removeProperty('height');
+      architecture.style.removeProperty('--arch-mobile-scale');
+      return;
+    }
+
+    var scale=Math.min(1,shell.clientWidth/frameWidth);
+    architecture.style.setProperty('--arch-mobile-scale',scale.toFixed(4));
+    shell.style.height=Math.ceil(architecture.offsetHeight*scale)+'px';
+  }
+
+  sizeArchitecture();
+  window.addEventListener('load',sizeArchitecture,{once:true});
+  window.addEventListener('resize',sizeArchitecture);
+  if(document.fonts && document.fonts.ready){document.fonts.ready.then(sizeArchitecture);}
 })();
 
 /* Reports directory and embedded PDF reader. */

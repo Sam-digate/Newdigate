@@ -11,7 +11,7 @@
 #pg-l-blog-detail .nav-links a:hover,#pg-l-blog-detail .nav-links a.on{color:#6C47FF!important;background:transparent!important;border-color:transparent!important}
 #pg-l-blog-detail .nav-links a.on{font-weight:800}
 #pg-l-blog-detail header.nav{position:fixed!important;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.92)!important;border-bottom:1px solid rgba(226,232,240,.92)!important;box-shadow:0 12px 34px -30px rgba(15,23,42,.42);backdrop-filter:saturate(1.4) blur(14px)}
-#pg-l-blog-detail .brand{display:inline-flex!important;align-items:center;justify-content:flex-start;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap;flex:none}
+#pg-l-blog-detail .brand{display:inline-flex!important;align-items:center;justify-content:flex-start;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://testagent.xdigate.cn/api/projects/6967392b8a886457cfc0346b/storage?relativePath=resources%2F1789019198913-logo2.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap;flex:none}
 #pg-l-blog-detail .brand .a{color:transparent!important}
 #pg-l-blog-detail .nav-cta{display:flex;align-items:center;gap:12px}
 #pg-l-blog-detail .nav-cta .lang{display:none}
@@ -73,7 +73,7 @@
 #pg-l-use-case-detail .nav-links a:hover,#pg-l-use-case-detail .nav-links a.on{color:#6C47FF!important;background:transparent!important;border-color:transparent!important}
 #pg-l-use-case-detail .nav-links a.on{font-weight:800}
 #pg-l-use-case-detail header.nav{position:fixed!important;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.92)!important;border-bottom:1px solid rgba(226,232,240,.92)!important;box-shadow:0 12px 34px -30px rgba(15,23,42,.42);backdrop-filter:saturate(1.4) blur(14px)}
-#pg-l-use-case-detail .brand{display:inline-flex!important;align-items:center;justify-content:flex-start;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap;flex:none}
+#pg-l-use-case-detail .brand{display:inline-flex!important;align-items:center;justify-content:flex-start;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://testagent.xdigate.cn/api/projects/6967392b8a886457cfc0346b/storage?relativePath=resources%2F1789019198913-logo2.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;white-space:nowrap;flex:none}
 #pg-l-use-case-detail .brand .a{color:transparent!important}
 #pg-l-use-case-detail .nav-cta{display:flex;align-items:center;gap:12px}
 #pg-l-use-case-detail .nav-cta .lang{display:none}

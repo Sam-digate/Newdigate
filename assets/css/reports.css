@@ -8,7 +8,7 @@
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-links>a{display:inline-flex;align-items:center;justify-content:center;padding:7px 8px;color:#334155;font-size:14.5px;font-weight:500;line-height:1;white-space:nowrap}
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .resource-nav{flex:0 0 91px;width:91px}
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .resources-trigger{width:91px;padding:7px 0;font-weight:500}
-:is(#pg-l-reports,#pg-l-report-detail) header.nav .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;overflow:hidden!important}
+:is(#pg-l-reports,#pg-l-report-detail) header.nav .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;background:url("https://testagent.xdigate.cn/api/projects/6967392b8a886457cfc0346b/storage?relativePath=resources%2F1789019198913-logo2.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;overflow:hidden!important}
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta{display:flex;align-items:center;justify-content:flex-end;flex:0 0 125px}
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta .lang{display:none}
 :is(#pg-l-reports,#pg-l-report-detail) header.nav .nav-cta .btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 18px;border:0;border-radius:10px;background:linear-gradient(135deg,#3A71FF 0%,#7C3AED 100%);color:#fff;font-size:14px;font-weight:700;line-height:1;white-space:nowrap;box-shadow:0 12px 24px -16px rgba(108,71,255,.8)}
@@ -75,7 +75,7 @@
 
 :is(#pg-l-reports,#pg-l-report-detail) footer{padding:60px 0 38px;background:#111827;color:#f8fafc}
 :is(#pg-l-reports,#pg-l-report-detail) footer .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.14)}
-:is(#pg-l-reports,#pg-l-report-detail) footer .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://www.digate.net/index_files/logo.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;filter:brightness(0) invert(1);opacity:.94}
+:is(#pg-l-reports,#pg-l-report-detail) footer .brand{display:inline-flex;width:102px!important;min-width:102px!important;height:30px!important;min-height:30px!important;background:url("https://testagent.xdigate.cn/api/projects/6967392b8a886457cfc0346b/storage?relativePath=resources%2F1789019198913-logo2.png") left center/contain no-repeat!important;color:transparent!important;font-size:0!important;letter-spacing:0!important;line-height:1!important;overflow:hidden!important;filter:brightness(0) invert(1);opacity:.94}
 :is(#pg-l-reports,#pg-l-report-detail) footer .brand .a{color:transparent!important}
 :is(#pg-l-reports,#pg-l-report-detail) footer p{max-width:34ch;color:rgba(226,232,240,.78);font-size:14px;line-height:1.6}
 :is(#pg-l-reports,#pg-l-report-detail) footer h4{margin-bottom:14px;color:rgba(199,210,254,.68);font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}

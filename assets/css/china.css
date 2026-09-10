@@ -121,6 +121,7 @@
 #pg-l-china .brand-marquee-track.logo-strip-track{display:flex;width:200%;gap:0;align-items:center;animation:logoStripScroll 34s linear infinite}
 #pg-l-china .brand-marquee:hover .brand-marquee-track{animation-play-state:paused}
 #pg-l-china .brand-logo-strip{display:block;width:50%;height:auto;flex:0 0 50%;border:0;border-radius:0;box-shadow:none}
+@media(max-width:640px){#pg-l-china .brand-marquee-track.logo-strip-track{width:max-content;animation-duration:44s}#pg-l-china .brand-logo-strip{width:auto;max-width:none;height:64px;flex:0 0 auto}}
 #pg-l-china .china-cta-section{background:radial-gradient(ellipse at 10% 100%,#D9E4FF,transparent 60%),radial-gradient(ellipse at 95% 80%,#EAE0FF,transparent 65%),#FAFAFD;text-align:center;padding:90px 0}
 #pg-l-china .cta h2{max-width:880px;margin:0 auto 22px;font-size:clamp(34px,4vw,50px)}
 #pg-l-china .cta p{font-size:18px;max-width:740px;margin:0 auto 28px}
