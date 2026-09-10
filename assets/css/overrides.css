@@ -3799,9 +3799,14 @@
 #pg-l-xdigate .xdigate-summary-section{padding:72px 0 84px;background:var(--paper)}
 #pg-l-xdigate .withyou.human-ai-card{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:58px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
 #pg-l-xdigate .human-ai-image{min-width:0;overflow:hidden;border-radius:22px;background:transparent;box-shadow:0 30px 64px -42px rgba(15,23,42,.34)}
-#pg-l-xdigate .human-ai-image img{display:block;width:100%;height:auto;object-fit:contain;border:0;border-radius:0;box-shadow:none;filter:none;transition:transform .32s cubic-bezier(.22,1,.36,1)}
+#pg-l-xdigate .human-ai-image img{display:block;width:100%;height:auto;object-fit:contain;border:0;border-radius:0;box-shadow:none;filter:none;transition:transform .55s ease}
 #pg-l-xdigate .human-ai-image:hover img{transform:scale(1.025)}
 @media(prefers-reduced-motion:reduce){#pg-l-xdigate .human-ai-image img{transition:none}#pg-l-xdigate .human-ai-image:hover img{transform:none}}
+#pg-l-home .agent-run.home-achieve-image{height:560px;overflow:hidden;border-color:#E2E8F0;background:#EEF2F7;box-shadow:0 32px 80px -50px rgba(48,37,115,.5)}
+#pg-l-home .home-achieve-image-media{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+#pg-l-home .home-achieve-image:hover .home-achieve-image-media{transform:scale(1.025)}
+@media(max-width:640px){#pg-l-home .agent-run.home-achieve-image{height:460px;min-height:0}}
+@media(prefers-reduced-motion:reduce){#pg-l-home .home-achieve-image-media{transition:none}#pg-l-home .home-achieve-image:hover .home-achieve-image-media{transform:none}}
 #pg-l-xdigate .xdigate-comparison-head{max-width:760px;margin:0 auto 34px;text-align:center}
 #pg-l-xdigate .xdigate-comparison-kicker{display:inline-flex;align-items:center;min-height:30px;margin-bottom:15px;padding:7px 14px;border:1px solid #D9E0ED;border-radius:999px;background:rgba(255,255,255,.82);color:#4F46E5;font-family:var(--mono);font-size:10px;font-weight:800;line-height:1;letter-spacing:.14em;text-transform:uppercase}
 #pg-l-xdigate .xdigate-comparison-head h2{margin:0;font-family:var(--display);font-size:clamp(34px,3.7vw,46px);line-height:1.12;letter-spacing:-.025em;color:var(--ink)}
