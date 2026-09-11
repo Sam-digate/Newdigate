@@ -15,6 +15,11 @@ document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-di
   link.textContent='i-Digate';
 });
 
+/* Keep the x-Digate brand casing consistent in global navigation and footers. */
+document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-xdigate"],footer a[data-go="l-xdigate"]').forEach(function(link){
+  link.textContent='x-Digate';
+});
+
 /* Resources is a family of pages; the FAQ is the first page to be published. */
 (function(){
   var menus=[];
