@@ -194,6 +194,16 @@
   padding-inline:var(--page-gutter);
 }
 
+/* Keep desktop navigation grouped with the logo while the CTA stays right-aligned. */
+@media(min-width:1101px){
+  :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo) header.nav .nav-in{justify-content:flex-start}
+  :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo) header.nav .nav-links{
+    margin-left:64px;
+    margin-right:auto;
+  }
+  :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo) header.nav .nav-cta{margin-left:24px}
+}
+
 /* Make room for China without changing the shared mobile breakpoint. */
 @media(min-width:981px) and (max-width:1180px){
   :is(#pg-l-home,#pg-l-cdigate,#pg-l-china,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-company,#pg-l-demo) header.nav .nav-in{gap:12px}
@@ -527,7 +537,71 @@
   }
 }
 
-/* Resources becomes a simple accordion in the mobile navigation. */
+/* Digate product family: compact dropdown using the Resources interaction pattern. */
+header.nav .nav-links .digate-nav{
+  flex:0 0 78px;
+  width:78px;
+}
+
+header.nav .nav-links .digate-trigger,
+header.nav .nav-links .digate-trigger.is-current{
+  width:78px;
+  padding-inline:0;
+  font-weight:500;
+}
+
+header.nav .nav-links .digate-menu{
+  left:0;
+  width:360px;
+  transform:translateY(-8px);
+}
+header.nav .nav-links .digate-nav:hover .digate-menu,
+header.nav .nav-links .digate-nav:focus-within .digate-menu,
+header.nav .nav-links .digate-nav.is-open .digate-menu{transform:translateY(0)}
+header.nav .nav-links .digate-menu-grid{grid-template-columns:1fr}
+header.nav .nav-links .digate-menu-grid>a{min-height:66px!important}
+header.nav .nav-links .resource-menu-icon.idigate{color:#2563EB;background:#EEF4FF}
+header.nav .nav-links .resource-menu-icon.xdigate{color:#7C3AED;background:#F3EEFF}
+header.nav .nav-links .resource-menu-icon.cdigate{color:#0F9F75;background:#EAFBF5}
+
+/* Built For groups its Global and China destinations in the same navigation system. */
+header.nav .nav-links .built-for-nav{
+  flex:0 0 92px;
+  width:92px;
+}
+
+header.nav .nav-links .built-for-trigger,
+header.nav .nav-links .built-for-trigger.is-current{
+  width:92px;
+  padding-inline:0;
+  font-weight:500;
+}
+
+header.nav .nav-links .built-for-menu{
+  left:0;
+  width:340px;
+  transform:translateY(-8px);
+}
+header.nav .nav-links .built-for-nav:hover .built-for-menu,
+header.nav .nav-links .built-for-nav:focus-within .built-for-menu,
+header.nav .nav-links .built-for-nav.is-open .built-for-menu{transform:translateY(0)}
+header.nav .nav-links .built-for-menu-grid{grid-template-columns:1fr}
+header.nav .nav-links .built-for-menu-grid>a{min-height:66px!important}
+header.nav .nav-links .resource-menu-icon.global-market{color:#2563EB;background:#EEF4FF}
+header.nav .nav-links .resource-menu-icon.china-market{color:#DC2626;background:#FEF0F0}
+
+/* Anchor Resources to its label instead of centering the panel under it. */
+header.nav .nav-links .resource-nav:not(.digate-nav):not(.built-for-nav) .resources-menu{
+  left:0;
+  transform:translateY(-8px);
+}
+header.nav .nav-links .resource-nav:not(.digate-nav):not(.built-for-nav):hover .resources-menu,
+header.nav .nav-links .resource-nav:not(.digate-nav):not(.built-for-nav):focus-within .resources-menu,
+header.nav .nav-links .resource-nav:not(.digate-nav):not(.built-for-nav).is-open .resources-menu{
+  transform:translateY(0);
+}
+
+/* Digate, Built For, and Resources become matching accordions in mobile navigation. */
 @media(max-width:1100px){
   :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo) header.nav .mobile-site-menu{
     height:calc(100vh - 70px);
@@ -572,6 +646,8 @@
     font-size:12px;
     transition:transform .2s ease;
   }
+
+  header.nav .mobile-resource-toggle.is-current{color:#6C47FF;font-weight:700}
 
   header.nav .mobile-resource-group.is-open .mobile-resource-toggle i{transform:rotate(180deg)}
 

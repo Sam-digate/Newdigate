@@ -10,15 +10,157 @@ var DIGATE_ROUTES={
 };
 function digateRoute(key){return DIGATE_ROUTES[key] || DIGATE_HOME_ROUTE;}
 
-/* Keep the i-Digate product label consistent in every global navigation. */
+/* Keep the Digate product labels consistent in every global navigation. */
 document.querySelectorAll('.nav-links a[data-go="l-digate"],.mrow a[data-k="l-digate"]').forEach(function(link){
-  link.textContent='i-Digate';
+  link.textContent='I-Digate';
 });
 
-/* Keep the x-Digate brand casing consistent in global navigation and footers. */
-document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-xdigate"],footer a[data-go="l-xdigate"]').forEach(function(link){
+document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-xdigate"]').forEach(function(link){
+  link.textContent='X-Digate';
+});
+
+/* Preserve the established footer casing separately from navigation. */
+document.querySelectorAll('footer a[data-go="l-xdigate"]').forEach(function(link){
   link.textContent='x-Digate';
 });
+
+/* Group the three Digate products and place Company directly after Platform. */
+(function(){
+  document.querySelectorAll('.nav-links').forEach(function(nav,index){
+    var platformLink=nav.querySelector(':scope > a[data-go="l-platform"]');
+    var companyLink=nav.querySelector(':scope > a[data-go="l-company"]');
+    var iDigateLink=nav.querySelector(':scope > a[data-go="l-digate"]');
+    var xDigateLink=nav.querySelector(':scope > a[data-go="l-xdigate"]');
+    var cDigateLink=nav.querySelector(':scope > a[data-go="l-cdigate"]');
+    if(platformLink && companyLink){platformLink.insertAdjacentElement('afterend',companyLink);}
+    if(!iDigateLink || !xDigateLink || !cDigateLink){return;}
+
+    var wrapper=document.createElement('div');
+    var trigger=document.createElement('button');
+    var panel=document.createElement('div');
+    var currentKey=iDigateLink.classList.contains('on')?'l-digate':(xDigateLink.classList.contains('on')?'l-xdigate':(cDigateLink.classList.contains('on')?'l-cdigate':''));
+    var panelId='digate-menu-'+index;
+
+    wrapper.className='resource-nav digate-nav';
+    trigger.className='resources-trigger digate-trigger'+(currentKey?' is-current':'');
+    trigger.type='button';
+    trigger.setAttribute('aria-expanded','false');
+    trigger.setAttribute('aria-controls',panelId);
+    trigger.setAttribute('aria-haspopup','true');
+    trigger.innerHTML='<span>Digate</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+
+    panel.className='resources-menu digate-menu';
+    panel.id=panelId;
+    panel.setAttribute('aria-label','Digate products');
+    panel.innerHTML='<div class="resources-menu-grid digate-menu-grid">'+
+      '<a href="'+digateRoute('l-digate')+'" data-go="l-digate"'+(currentKey==='l-digate'?' class="is-current"':'')+'><span class="resource-menu-icon idigate"><i class="fa-solid fa-database"></i></span><span class="resource-menu-copy"><strong>I-Digate</strong><small>Data intelligence &amp; knowledge</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '<a href="'+digateRoute('l-xdigate')+'" data-go="l-xdigate"'+(currentKey==='l-xdigate'?' class="is-current"':'')+'><span class="resource-menu-icon xdigate"><i class="fa-solid fa-robot"></i></span><span class="resource-menu-copy"><strong>X-Digate</strong><small>AI-powered execution</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '<a href="'+digateRoute('l-cdigate')+'" data-go="l-cdigate"'+(currentKey==='l-cdigate'?' class="is-current"':'')+'><span class="resource-menu-icon cdigate"><i class="fa-solid fa-diagram-project"></i></span><span class="resource-menu-copy"><strong>C-Digate</strong><small>Custom commerce operating system</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '</div>';
+
+    wrapper.appendChild(trigger);
+    wrapper.appendChild(panel);
+    iDigateLink.replaceWith(wrapper);
+    xDigateLink.remove();
+    cDigateLink.remove();
+
+    var closeTimer;
+    function setMenuOpen(open){
+      window.clearTimeout(closeTimer);
+      var willOpen=!!open;
+      document.querySelectorAll('.nav-links .resource-nav.is-open').forEach(function(other){
+        if(other===wrapper){return;}
+        other.classList.remove('is-open');
+        var otherTrigger=other.querySelector('.resources-trigger');
+        if(otherTrigger){otherTrigger.setAttribute('aria-expanded','false');}
+      });
+      wrapper.classList.toggle('is-open',willOpen);
+      trigger.setAttribute('aria-expanded',willOpen?'true':'false');
+    }
+
+    trigger.addEventListener('click',function(event){
+      event.stopPropagation();
+      setMenuOpen(!wrapper.classList.contains('is-open'));
+    });
+    wrapper.addEventListener('mouseenter',function(){setMenuOpen(true);});
+    wrapper.addEventListener('mouseleave',function(){closeTimer=window.setTimeout(function(){setMenuOpen(false);},120);});
+    wrapper.addEventListener('focusin',function(){setMenuOpen(true);});
+    wrapper.addEventListener('focusout',function(){
+      closeTimer=window.setTimeout(function(){
+        if(!wrapper.contains(document.activeElement)){setMenuOpen(false);}
+      },0);
+    });
+
+    document.addEventListener('click',function(){setMenuOpen(false);});
+    document.addEventListener('keydown',function(event){if(event.key==='Escape'){setMenuOpen(false);}});
+  });
+})();
+
+/* Group Global and China under the Built For navigation label. */
+(function(){
+  document.querySelectorAll('.nav-links').forEach(function(nav,index){
+    var builtForLink=nav.querySelector(':scope > a[data-go="l-built-for"]');
+    var chinaLink=nav.querySelector(':scope > a[data-go="l-china"]');
+    if(!builtForLink || !chinaLink){return;}
+
+    var wrapper=document.createElement('div');
+    var trigger=document.createElement('button');
+    var panel=document.createElement('div');
+    var currentKey=builtForLink.classList.contains('on')?'l-built-for':(chinaLink.classList.contains('on')?'l-china':'');
+    var panelId='built-for-menu-'+index;
+
+    wrapper.className='resource-nav built-for-nav';
+    trigger.className='resources-trigger built-for-trigger'+(currentKey?' is-current':'');
+    trigger.type='button';
+    trigger.setAttribute('aria-expanded','false');
+    trigger.setAttribute('aria-controls',panelId);
+    trigger.setAttribute('aria-haspopup','true');
+    trigger.innerHTML='<span>Built For</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+
+    panel.className='resources-menu built-for-menu';
+    panel.id=panelId;
+    panel.setAttribute('aria-label','Built For markets');
+    panel.innerHTML='<div class="resources-menu-grid built-for-menu-grid">'+
+      '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for"'+(currentKey==='l-built-for'?' class="is-current"':'')+'><span class="resource-menu-icon global-market"><i class="fa-solid fa-globe"></i></span><span class="resource-menu-copy"><strong>Global</strong><small>Built for global operations</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '<a href="'+digateRoute('l-china')+'" data-go="l-china"'+(currentKey==='l-china'?' class="is-current"':'')+'><span class="resource-menu-icon china-market"><i class="fa-solid fa-location-dot"></i></span><span class="resource-menu-copy"><strong>China</strong><small>Built for the China market</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '</div>';
+
+    wrapper.appendChild(trigger);
+    wrapper.appendChild(panel);
+    builtForLink.replaceWith(wrapper);
+    chinaLink.remove();
+
+    var closeTimer;
+    function setMenuOpen(open){
+      window.clearTimeout(closeTimer);
+      var willOpen=!!open;
+      document.querySelectorAll('.nav-links .resource-nav.is-open').forEach(function(other){
+        if(other===wrapper){return;}
+        other.classList.remove('is-open');
+        var otherTrigger=other.querySelector('.resources-trigger');
+        if(otherTrigger){otherTrigger.setAttribute('aria-expanded','false');}
+      });
+      wrapper.classList.toggle('is-open',willOpen);
+      trigger.setAttribute('aria-expanded',willOpen?'true':'false');
+    }
+
+    trigger.addEventListener('click',function(event){
+      event.stopPropagation();
+      setMenuOpen(!wrapper.classList.contains('is-open'));
+    });
+    wrapper.addEventListener('mouseenter',function(){setMenuOpen(true);});
+    wrapper.addEventListener('mouseleave',function(){closeTimer=window.setTimeout(function(){setMenuOpen(false);},120);});
+    wrapper.addEventListener('focusin',function(){setMenuOpen(true);});
+    wrapper.addEventListener('focusout',function(){
+      closeTimer=window.setTimeout(function(){
+        if(!wrapper.contains(document.activeElement)){setMenuOpen(false);}
+      },0);
+    });
+
+    document.addEventListener('click',function(){setMenuOpen(false);});
+    document.addEventListener('keydown',function(event){if(event.key==='Escape'){setMenuOpen(false);}});
+  });
+})();
 
 /* Resources is a family of pages; the FAQ is the first page to be published. */
 (function(){
@@ -59,10 +201,11 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
     function setMenuOpen(open){
       window.clearTimeout(closeTimer);
       var willOpen=!!open;
-      menus.forEach(function(other){
+      document.querySelectorAll('.nav-links .resource-nav').forEach(function(other){
         if(other===wrapper){return;}
         other.classList.remove('is-open');
-        other.querySelector('.resources-trigger').setAttribute('aria-expanded','false');
+        var otherTrigger=other.querySelector('.resources-trigger');
+        if(otherTrigger){otherTrigger.setAttribute('aria-expanded','false');}
       });
       wrapper.classList.toggle('is-open',willOpen);
       trigger.setAttribute('aria-expanded',willOpen?'true':'false');
@@ -357,7 +500,7 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
   if(context){context.textContent=data.context;}
 })();
 
-/* Make the existing mobile menu buttons useful and keep Resources discoverable. */
+/* Make the existing mobile menu buttons useful and keep grouped navigation compact. */
 (function(){
   document.querySelectorAll('header.nav').forEach(function(header,index){
     var menuButton=header.querySelector('.menu-btn');
@@ -365,6 +508,8 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
     if(!menuButton || !nav){return;}
     var panel=document.createElement('nav');
     var panelId='mobile-site-menu-'+index;
+    var digatePanelId=panelId+'-digate';
+    var builtForPanelId=panelId+'-built-for';
     var resourcePanelId=panelId+'-resources';
     panel.className='mobile-site-menu';
     panel.id=panelId;
@@ -372,12 +517,21 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
     panel.setAttribute('aria-hidden','true');
     panel.innerHTML='<a href="'+digateRoute('l-home')+'" data-go="l-home">Home</a>'+
       '<a href="'+digateRoute('l-platform')+'" data-go="l-platform">Platform</a>'+
-      '<a href="'+digateRoute('l-digate')+'" data-go="l-digate">i-Digate</a>'+
-      '<a href="'+digateRoute('l-xdigate')+'" data-go="l-xdigate">X-Digate</a>'+
-      '<a href="'+digateRoute('l-cdigate')+'" data-go="l-cdigate">C-Digate</a>'+
+      '<a href="'+digateRoute('l-company')+'" data-go="l-company">Company</a>'+
+      '<div class="mobile-resource-group mobile-digate-group">'+
+        '<button class="mobile-resource-toggle" type="button" aria-expanded="false" aria-controls="'+digatePanelId+'"><span>Digate</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>'+
+        '<div class="mobile-resource-links" id="'+digatePanelId+'" hidden>'+
+          '<a href="'+digateRoute('l-digate')+'" data-go="l-digate">I-Digate</a>'+
+          '<a href="'+digateRoute('l-xdigate')+'" data-go="l-xdigate">X-Digate</a>'+
+          '<a href="'+digateRoute('l-cdigate')+'" data-go="l-cdigate">C-Digate</a>'+
+        '</div></div>'+
       '<a href="'+digateRoute('l-solutions')+'" data-go="l-solutions">Solutions</a>'+
-      '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for">Built For</a>'+
-      '<a href="'+digateRoute('l-china')+'" data-go="l-china">China</a>'+
+      '<div class="mobile-resource-group mobile-built-for-group">'+
+        '<button class="mobile-resource-toggle" type="button" aria-expanded="false" aria-controls="'+builtForPanelId+'"><span>Built For</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>'+
+        '<div class="mobile-resource-links" id="'+builtForPanelId+'" hidden>'+
+          '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for">Global</a>'+
+          '<a href="'+digateRoute('l-china')+'" data-go="l-china">China</a>'+
+        '</div></div>'+
       '<div class="mobile-resource-group">'+
         '<button class="mobile-resource-toggle" type="button" aria-expanded="false" aria-controls="'+resourcePanelId+'"><span>Resources</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>'+
         '<div class="mobile-resource-links" id="'+resourcePanelId+'" hidden>'+
@@ -386,8 +540,7 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
           '<a href="'+digateRoute('l-use-cases')+'" data-go="l-use-cases">Use Cases</a>'+
           '<a href="'+digateRoute('l-reports')+'" data-go="l-reports">Reports</a>'+
           '<a href="'+digateRoute('l-resources')+'" data-go="l-resources">FAQs</a>'+
-        '</div></div>'+
-      '<a href="'+digateRoute('l-company')+'" data-go="l-company">Company</a>';
+        '</div></div>';
     header.appendChild(panel);
     var currentPage=header.closest('.page');
     panel.querySelectorAll('a[data-go]').forEach(function(link){
@@ -395,19 +548,31 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
     });
     menuButton.setAttribute('aria-expanded','false');
     menuButton.setAttribute('aria-controls',panelId);
-    var resourceGroup=panel.querySelector('.mobile-resource-group');
-    var resourceToggle=panel.querySelector('.mobile-resource-toggle');
-    var resourceLinks=panel.querySelector('.mobile-resource-links');
+    var mobileGroups=[].slice.call(panel.querySelectorAll('.mobile-resource-group'));
 
-    function closeResources(){
-      if(!resourceGroup || !resourceToggle || !resourceLinks){return;}
-      resourceGroup.classList.remove('is-open');
-      resourceToggle.setAttribute('aria-expanded','false');
-      resourceLinks.hidden=true;
+    function setGroupOpen(group,open){
+      var toggle=group.querySelector('.mobile-resource-toggle');
+      var links=group.querySelector('.mobile-resource-links');
+      if(!toggle || !links){return;}
+      mobileGroups.forEach(function(other){
+        if(other===group){return;}
+        var otherToggle=other.querySelector('.mobile-resource-toggle');
+        var otherLinks=other.querySelector('.mobile-resource-links');
+        other.classList.remove('is-open');
+        if(otherToggle){otherToggle.setAttribute('aria-expanded','false');}
+        if(otherLinks){otherLinks.hidden=true;}
+      });
+      group.classList.toggle('is-open',!!open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      links.hidden=!open;
+    }
+
+    function closeGroups(){
+      mobileGroups.forEach(function(group){setGroupOpen(group,false);});
     }
 
     function closePanel(){
-      closeResources();
+      closeGroups();
       panel.classList.remove('is-open');
       panel.setAttribute('aria-hidden','true');
       menuButton.setAttribute('aria-expanded','false');
@@ -425,14 +590,13 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
       menuButton.setAttribute('aria-expanded',open?'true':'false');
     });
 
-    if(resourceToggle && resourceGroup && resourceLinks){
-      resourceToggle.addEventListener('click',function(){
-        var open=!resourceGroup.classList.contains('is-open');
-        resourceGroup.classList.toggle('is-open',open);
-        resourceToggle.setAttribute('aria-expanded',open?'true':'false');
-        resourceLinks.hidden=!open;
-      });
-    }
+    mobileGroups.forEach(function(group){
+      var toggle=group.querySelector('.mobile-resource-toggle');
+      if(group.querySelector('a[aria-current="page"]') && toggle){toggle.classList.add('is-current');}
+      if(toggle){toggle.addEventListener('click',function(){
+        setGroupOpen(group,!group.classList.contains('is-open'));
+      });}
+    });
 
     panel.querySelectorAll('[data-go]').forEach(function(link){link.addEventListener('click',closePanel);});
     document.addEventListener('click',function(event){if(!header.contains(event.target)){closePanel();}});
