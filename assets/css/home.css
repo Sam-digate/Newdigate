@@ -263,7 +263,9 @@
 #pg-l-home .meet-digate-intro-action p:last-of-type{margin-bottom:0;font-weight:700;color:var(--ink)}
 #pg-l-home .meet-digate-intro-action .btn{min-height:44px;margin-top:28px;padding:11px 18px}
 #pg-l-home .meet-digate-intro-media{aspect-ratio:4/3;margin:0;overflow:hidden;border:1px solid #E2E8F0;border-radius:24px;background:#EEF2FF;box-shadow:0 28px 64px -46px rgba(47,38,116,.48)}
-#pg-l-home .meet-digate-intro-media img{display:block;width:100%;height:100%;object-fit:cover}
+#pg-l-home .meet-digate-intro-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){#pg-l-home .meet-digate-intro-media:hover img{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){#pg-l-home .meet-digate-intro-media img{transition:none}#pg-l-home .meet-digate-intro-media:hover img{transform:none}}
 #pg-l-home .meet-layers-section{background-color:#fff;background-image:linear-gradient(rgba(108,71,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(108,71,255,.055) 1px,transparent 1px);background-size:28px 28px}
 #pg-l-home .meet-layers-wrap{padding-top:52px;padding-bottom:76px}
 #pg-l-home .meet-layers-head{margin:0 auto 40px;text-align:center}
