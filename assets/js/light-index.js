@@ -1565,3 +1565,66 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
   if(download){download.href=data.pdf;}
   document.title=data.title+' — Digate Reports';
 })();
+
+/* Leadership carousel: advance one profile at a time and stop at both ends. */
+(function(){
+  var carousel=document.querySelector('[data-leadership-carousel]');
+  if(!carousel){return;}
+
+  var track=carousel.querySelector('[data-leadership-track]');
+  var cards=[].slice.call(track ? track.querySelectorAll('.leadership-card') : []);
+  var previous=carousel.querySelector('[data-leadership-prev]');
+  var next=carousel.querySelector('[data-leadership-next]');
+  var status=carousel.querySelector('[data-leadership-status]');
+  var currentIndex=0;
+
+  if(!track || !cards.length || !previous || !next){return;}
+
+  function visibleCount(){
+    var value=parseInt(window.getComputedStyle(carousel).getPropertyValue('--leadership-visible'),10);
+    return Number.isFinite(value) && value>0 ? value : 1;
+  }
+
+  function render(){
+    var visible=Math.min(visibleCount(),cards.length);
+    var maxIndex=Math.max(0,cards.length-visible);
+    var trackStyle=window.getComputedStyle(track);
+    var gap=parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+    var cardWidth=cards[0].getBoundingClientRect().width;
+    currentIndex=Math.min(currentIndex,maxIndex);
+    track.style.transform='translate3d('+(-currentIndex*(cardWidth+gap))+'px,0,0)';
+    previous.disabled=currentIndex===0;
+    next.disabled=currentIndex===maxIndex;
+
+    cards.forEach(function(card,index){
+      var hidden=index<currentIndex || index>=currentIndex+visible;
+      card.setAttribute('aria-hidden',hidden?'true':'false');
+      if(hidden){card.setAttribute('inert','');}else{card.removeAttribute('inert');}
+    });
+
+    if(status){
+      status.textContent='Showing team members '+(currentIndex+1)+' through '+Math.min(cards.length,currentIndex+visible)+' of '+cards.length;
+    }
+  }
+
+  previous.addEventListener('click',function(){
+    if(currentIndex===0){return;}
+    currentIndex--;
+    render();
+  });
+
+  next.addEventListener('click',function(){
+    var maxIndex=Math.max(0,cards.length-visibleCount());
+    if(currentIndex>=maxIndex){return;}
+    currentIndex++;
+    render();
+  });
+
+  var resizeTimer;
+  window.addEventListener('resize',function(){
+    window.clearTimeout(resizeTimer);
+    resizeTimer=window.setTimeout(render,120);
+  });
+  if(document.fonts && document.fonts.ready){document.fonts.ready.then(render);}
+  render();
+})();
