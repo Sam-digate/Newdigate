@@ -122,7 +122,7 @@ document.querySelectorAll('footer a[data-go="l-xdigate"]').forEach(function(link
     panel.setAttribute('aria-label','Built For markets');
     panel.innerHTML='<div class="resources-menu-grid built-for-menu-grid">'+
       '<a href="'+digateRoute('l-built-for')+'" data-go="l-built-for"'+(currentKey==='l-built-for'?' class="is-current"':'')+'><span class="resource-menu-icon global-market"><i class="fa-solid fa-globe"></i></span><span class="resource-menu-copy"><strong>Global</strong><small>Built for global operations</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
-      '<a href="'+digateRoute('l-china')+'" data-go="l-china"'+(currentKey==='l-china'?' class="is-current"':'')+'><span class="resource-menu-icon china-market"><i class="fa-solid fa-location-dot"></i></span><span class="resource-menu-copy"><strong>China</strong><small>Built for the China market</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
+      '<a href="'+digateRoute('l-china')+'" data-go="l-china"'+(currentKey==='l-china'?' class="is-current"':'')+'><span class="resource-menu-icon china-market"><i class="fa-solid fa-location-dot"></i></span><span class="resource-menu-copy"><strong>China</strong><small>Built for China operations</small></span><i class="fa-solid fa-arrow-right resource-menu-arrow"></i></a>'+
       '</div>';
 
     wrapper.appendChild(trigger);
