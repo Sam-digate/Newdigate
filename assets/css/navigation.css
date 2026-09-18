@@ -684,3 +684,26 @@ header.nav .nav-links .resource-nav:not(.digate-nav):not(.built-for-nav).is-open
 @media(prefers-reduced-motion:reduce){
   header.nav .mobile-resource-toggle i{transition:none}
 }
+
+/* Shared section reveal: content remains visible unless JavaScript enables it. */
+:is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo).is-reveal-ready .rv{
+  opacity:0!important;
+  transform:translateY(28px)!important;
+  filter:blur(2px);
+  transition:opacity .72s ease,transform .72s cubic-bezier(.16,1,.3,1),filter .72s ease!important;
+}
+
+:is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo).is-reveal-ready .rv.is-visible{
+  opacity:1!important;
+  transform:none!important;
+  filter:none;
+}
+
+@media(prefers-reduced-motion:reduce){
+  :is(#pg-l-home,#pg-l-china,#pg-l-cdigate,#pg-l-platform,#pg-l-digate,#pg-l-xdigate,#pg-l-solutions,#pg-l-built-for,#pg-l-resources,#pg-l-resource-center,#pg-l-blogs,#pg-l-blog-detail,#pg-l-use-cases,#pg-l-use-case-detail,#pg-l-reports,#pg-l-report-detail,#pg-l-company,#pg-l-demo).is-reveal-ready .rv{
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+    transition:none!important;
+  }
+}

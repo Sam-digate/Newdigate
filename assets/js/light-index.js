@@ -1347,12 +1347,13 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
   requestReveal();
 })();
 
-/* Company and China sections share the one-time viewport reveal used by Use Cases. */
+/* Shared one-time viewport reveal for section content across the site. */
 (function(){
-  var page=document.getElementById('pg-l-company') || document.getElementById('pg-l-china') || document.getElementById('pg-l-cdigate');
-  if(!page){return;}
-  var blocks=[].slice.call(page.querySelectorAll('.rv')).filter(function(block){
-    return block.getClientRects().length>0;
+  var pages=[].slice.call(document.querySelectorAll('.page[id^="pg-l-"]'));
+  if(!pages.length){return;}
+  var blocks=[];
+  pages.forEach(function(page){
+    blocks=blocks.concat([].slice.call(page.querySelectorAll('.rv:not([data-no-reveal])')));
   });
   if(!blocks.length){return;}
   var motionQuery=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -1380,20 +1381,25 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
   window.addEventListener('scroll',requestReveal,{passive:true});
   window.addEventListener('resize',requestReveal);
   window.addEventListener('pageshow',requestReveal);
-  page.addEventListener('focusin',function(event){
-    blocks.forEach(function(block){
-      if(block.contains(event.target)){block.classList.add('is-visible');}
+  document.querySelectorAll('input[name="nav"]').forEach(function(input){
+    input.addEventListener('change',requestReveal);
+  });
+  pages.forEach(function(page){
+    page.addEventListener('focusin',function(event){
+      blocks.forEach(function(block){
+        if(block.contains(event.target)){block.classList.add('is-visible');}
+      });
     });
   });
   if(motionQuery && motionQuery.addEventListener){
     motionQuery.addEventListener('change',function(event){
       if(event.matches){
         blocks.forEach(function(block){block.classList.add('is-visible');});
-        page.classList.remove('is-reveal-ready');
+        pages.forEach(function(page){page.classList.remove('is-reveal-ready');});
       }
     });
   }
-  page.classList.add('is-reveal-ready');
+  pages.forEach(function(page){page.classList.add('is-reveal-ready');});
   requestReveal();
 })();
 
