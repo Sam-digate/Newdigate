@@ -19,10 +19,49 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
   link.textContent='X-Digate';
 });
 
-/* Preserve the established footer casing separately from navigation. */
-document.querySelectorAll('footer a[data-go="l-xdigate"]').forEach(function(link){
-  link.textContent='x-Digate';
-});
+/* Keep every page footer aligned with the current global navigation. */
+(function(){
+  var page=document.querySelector('.page[id^="pg-l-"]');
+  var currentKey=page?page.id.slice(3):'';
+
+  function footerLink(key,label){
+    var current=key===currentKey?' aria-current="page"':'';
+    return '<a href="'+digateRoute(key)+'" data-go="'+key+'"'+current+'>'+label+'</a>';
+  }
+
+  document.querySelectorAll('footer .fg').forEach(function(footerGrid){
+    footerGrid.classList.add('is-updated-footer');
+    footerGrid.innerHTML=
+      '<div class="footer-brand-block">'+
+        '<a class="footer-brand-home" href="'+digateRoute('l-home')+'" data-go="l-home" aria-label="Digate home"><span class="brand">DIG<span class="a">A</span>TE</span></a>'+
+        '<p>The Commerce Operating System &mdash; connecting data, business knowledge, and AI-powered execution into one continuous learning system.</p>'+
+      '</div>'+
+      '<div class="fcol"><h4>Platform</h4>'+
+        footerLink('l-home','Home')+
+        footerLink('l-platform','Platform')+
+        footerLink('l-digate','I-Digate')+
+        footerLink('l-xdigate','X-Digate')+
+        footerLink('l-cdigate','C-Digate')+
+        footerLink('l-solutions','Solutions')+
+      '</div>'+
+      '<div class="fcol"><h4>Company</h4>'+
+        footerLink('l-company','Company')+
+        footerLink('l-built-for','Built for Global')+
+        footerLink('l-china','Built for China')+
+      '</div>'+
+      '<div class="fcol"><h4>Resources</h4>'+
+        footerLink('l-resource-center','Resource Center')+
+        footerLink('l-blogs','Blogs')+
+        footerLink('l-use-cases','Use Cases')+
+        footerLink('l-reports','Reports')+
+        footerLink('l-resources','FAQs')+
+      '</div>'+
+      '<div class="fcol"><h4>Get Started</h4>'+
+        footerLink('l-demo','Book a Demo')+
+        '<a href="mailto:info@digate.ai">info@digate.ai</a>'+
+      '</div>';
+  });
+})();
 
 /* Group the three Digate products and place Company directly after Platform. */
 (function(){
@@ -718,6 +757,21 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
   var panels=[].slice.call(explorer.querySelectorAll('[role="tabpanel"]'));
   if(!tabs.length || tabs.length!==panels.length){return;}
 
+  function revealActiveTab(tab){
+    if(!window.matchMedia('(max-width:640px)').matches){return;}
+    var tablist=tab.parentElement;
+    if(!tablist){return;}
+    var target=tab.offsetLeft-(tablist.clientWidth-tab.offsetWidth)/2;
+    var maxScroll=Math.max(0,tablist.scrollWidth-tablist.clientWidth);
+    target=Math.max(0,Math.min(target,maxScroll));
+    var behavior=window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth';
+    if(typeof tablist.scrollTo==='function'){
+      tablist.scrollTo({left:target,behavior:behavior});
+    }else{
+      tablist.scrollLeft=target;
+    }
+  }
+
   function activate(index,moveFocus){
     tabs.forEach(function(tab,tabIndex){
       var active=tabIndex===index;
@@ -727,7 +781,8 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
       panels[tabIndex].hidden=!active;
       panels[tabIndex].classList.toggle('is-active',active);
     });
-    if(moveFocus){tabs[index].focus();}
+    if(moveFocus){tabs[index].focus({preventScroll:true});}
+    window.requestAnimationFrame(function(){revealActiveTab(tabs[index]);});
   }
 
   tabs.forEach(function(tab,index){
@@ -1085,6 +1140,39 @@ document.querySelectorAll('[data-company-thinking-tabs]').forEach(function(explo
 
   render(0,false);
   start();
+})();
+
+/* On phones, size every platform layer card from the first card's natural height. */
+(function(){
+  var stack=document.querySelector('#pg-l-platform .platform-layer-stack');
+  if(!stack){return;}
+  var cards=[].slice.call(stack.querySelectorAll('.platform-layer-card'));
+  if(cards.length<2){return;}
+
+  var mobileQuery=window.matchMedia('(max-width: 640px)');
+  var frame=null;
+
+  function syncCardHeight(){
+    if(frame){window.cancelAnimationFrame(frame);}
+    stack.style.removeProperty('--mobile-layer-card-height');
+    if(!mobileQuery.matches){return;}
+
+    frame=window.requestAnimationFrame(function(){
+      frame=null;
+      var firstHeight=Math.ceil(cards[0].getBoundingClientRect().height);
+      if(firstHeight>0){
+        stack.style.setProperty('--mobile-layer-card-height',firstHeight+'px');
+      }
+    });
+  }
+
+  var firstImage=cards[0].querySelector('img');
+  if(firstImage && !firstImage.complete){firstImage.addEventListener('load',syncCardHeight,{once:true});}
+  if(document.fonts && document.fonts.ready){document.fonts.ready.then(syncCardHeight);}
+  window.addEventListener('resize',syncCardHeight,{passive:true});
+  if(mobileQuery.addEventListener){mobileQuery.addEventListener('change',syncCardHeight);}
+  else if(mobileQuery.addListener){mobileQuery.addListener(syncCardHeight);}
+  syncCardHeight();
 })();
 
 (function(){
