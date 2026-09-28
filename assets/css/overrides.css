@@ -1982,7 +1982,7 @@
 #pg-l-digate .digate-featured-case:hover .digate-featured-case-link i{transform:translateX(3px)}
 #pg-l-digate .digate-truth-with-case{align-items:center}
 @media(max-width:1040px){#pg-l-digate .digate-truth-panel{grid-template-columns:1fr;gap:32px;padding:36px}#pg-l-digate .digate-truth-copy h2{white-space:normal}#pg-l-digate .digate-featured-case{width:100%;height:auto;aspect-ratio:16/9}}
-@media(max-width:640px){#pg-l-digate .truth-foundation-section{padding:58px 0}#pg-l-digate .digate-truth-panel{padding:24px 18px;border-radius:22px}#pg-l-digate .digate-truth-copy h2{font-size:clamp(31px,9vw,38px)}#pg-l-digate .digate-featured-case{aspect-ratio:4/5}#pg-l-digate .digate-featured-case-overlay{left:20px;right:20px;bottom:82px}#pg-l-digate .digate-featured-case-results{gap:8px;margin-top:15px}#pg-l-digate .digate-featured-case-results div{min-width:0;flex:1;padding:10px 11px}#pg-l-digate .digate-featured-case-link{right:20px;bottom:20px;width:44px;height:44px}}
+@media(max-width:640px){#pg-l-digate .truth-foundation-section{padding:58px 0}#pg-l-digate .digate-truth-panel{padding:24px 18px;border-radius:22px}#pg-l-digate .digate-truth-copy h2{font-size:clamp(31px,9vw,38px)}#pg-l-digate .digate-featured-case{aspect-ratio:10/11}#pg-l-digate .digate-featured-case-overlay{left:20px;right:20px;bottom:18px}#pg-l-digate .digate-featured-case-results{gap:8px;margin-top:15px}#pg-l-digate .digate-featured-case-results div{min-width:0;flex:1;padding:10px 11px}#pg-l-digate .digate-featured-case-link{display:none}}
 #pg-l-digate .truth ul{list-style:none;display:grid;gap:12px;margin-top:26px;padding:0;max-width:560px}
 #pg-l-digate .truth li{position:relative;display:flex;align-items:center;gap:14px;min-height:58px;padding:14px 18px 14px 56px;border-radius:15px;background:#fff;border:1px solid #E2E8F0;box-shadow:0 18px 36px -34px rgba(15,23,42,.35);font-size:14.5px;line-height:1.35;font-weight:700;color:#1F2937;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease}
 #pg-l-digate .truth li::before{content:"›";position:absolute;left:18px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:#F4F0FF;color:#6C47FF;font-size:20px;line-height:1;font-weight:800}
@@ -5785,6 +5785,43 @@
 #pg-l-digate .digate-knowledge-section .kt:nth-child(4) .d::before{content:"\f085"}
 #pg-l-digate .digate-knowledge-section .kt:nth-child(5) .d::before{content:"\f0ac"}
 #pg-l-digate .digate-knowledge-section .kt:nth-child(6) .d::before{content:"\f201"}
+
+@media(max-width:640px){
+  #pg-l-digate .digate-knowledge-section{
+    padding:48px 0 60px;
+  }
+
+  #pg-l-digate .digate-knowledge-head h2{
+    font-size:clamp(27px,7.5vw,30px);
+    line-height:1.12;
+  }
+
+  #pg-l-digate .digate-knowledge-head .title-line{
+    white-space:normal;
+  }
+
+  #pg-l-digate .digate-knowledge-head .knowledge-title-pair,
+  #pg-l-digate .digate-knowledge-head .knowledge-title-learning{
+    display:block;
+    font-size:clamp(24px,6.6vw,26px);
+  }
+
+  #pg-l-digate .digate-knowledge-head .knowledge-title-pair,
+  #pg-l-digate .digate-knowledge-head .knowledge-title-learning{
+    white-space:nowrap;
+  }
+
+  #pg-l-digate .digate-knowledge-section .ktiles{
+    gap:16px;
+  }
+
+  #pg-l-digate .digate-knowledge-section .kt{
+    min-height:0;
+    padding:18px;
+    gap:14px;
+    align-items:center;
+  }
+}
 
 /* Final leadership card treatment: white by default, purple on hover, white on mobile. */
 #pg-l-company .leadership-grid{
