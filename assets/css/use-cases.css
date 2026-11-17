@@ -44,6 +44,14 @@
 
 #pg-l-use-cases .use-cases-library{padding:72px 0 96px;background:#fff}
 #pg-l-use-cases .use-case-stack{display:grid;gap:28px}
+#pg-l-use-cases .use-case-filters{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+#pg-l-use-cases .use-case-filter-count{display:inline-flex;align-items:baseline;gap:4px;margin:0 0 0 auto;color:#94A3B8;font-size:12px;font-weight:700;white-space:nowrap}
+#pg-l-use-cases .use-case-filter-count strong{color:#5B3DEB;font-size:13px}
+#pg-l-use-cases .use-case-filters button{min-height:40px;padding:9px 13px;border:1px solid #E2E8F0;border-radius:11px;color:#687386;background:#fff;font:600 13px/1 var(--body);white-space:nowrap;cursor:pointer;transition:color .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+#pg-l-use-cases .use-case-filters button:hover{color:#5B3DEB;background:#F8F6FF;border-color:#D9D0FF}
+#pg-l-use-cases .use-case-filters button.is-active{color:#5B3DEB;background:#F5F2FF;border-color:#CFC2FF;box-shadow:0 10px 24px -20px rgba(63,44,168,.55)}
+#pg-l-use-cases .use-case-filters button:focus-visible{outline:3px solid rgba(108,71,255,.24);outline-offset:3px}
+#pg-l-use-cases .use-case-card[hidden]{display:none!important}
 #pg-l-use-cases .use-case-card{display:grid;grid-template-columns:minmax(0,.96fr) minmax(360px,1.04fr);gap:34px;align-items:center;min-height:392px;padding:34px;border:1px solid #E2E8F0;border-radius:20px;background:#fff;box-shadow:0 26px 68px -48px rgba(15,23,42,.36);overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
 #pg-l-use-cases .use-case-card:hover{transform:translateY(-4px);border-color:#B8A6FF;box-shadow:0 34px 72px -46px rgba(108,71,255,.4)}
 #pg-l-use-cases .use-case-card:focus-visible{outline:3px solid rgba(108,71,255,.24);outline-offset:4px}
@@ -88,6 +96,8 @@
   #pg-l-use-cases .use-cases-hero h1{font-size:clamp(38px,10vw,48px);max-width:none}
   #pg-l-use-cases .use-cases-hero p{font-size:16px}
   #pg-l-use-cases .use-cases-library{padding:46px 0 68px}
+  #pg-l-use-cases .use-case-filters{flex-wrap:nowrap;overflow-x:auto;padding:3px 3px 6px}
+  #pg-l-use-cases .use-case-filters button,#pg-l-use-cases .use-case-filter-count{flex:none}
   #pg-l-use-cases .use-case-card{padding:22px;border-radius:18px}
   #pg-l-use-cases .use-case-media,#pg-l-use-cases .use-case-media img{min-height:220px}
   #pg-l-use-cases footer .fg{grid-template-columns:1fr}

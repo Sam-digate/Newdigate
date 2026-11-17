@@ -385,6 +385,48 @@ document.querySelectorAll('.nav-links a[data-go="l-xdigate"],.mrow a[data-k="l-x
   });
 })();
 
+/* Filter the Use Cases library by business focus. */
+(function(){
+  var page=document.getElementById('pg-l-use-cases');
+  if(!page){return;}
+  var filters=[].slice.call(page.querySelectorAll('[data-case-filter]'));
+  var cards=[].slice.call(page.querySelectorAll('.use-case-card'));
+  var count=page.querySelector('[data-case-count]');
+  var countLabel=page.querySelector('[data-case-count-label]');
+  var categories={
+    'tru-niagen-china-growth':['growth'],
+    'customer-engagement-china':['growth'],
+    'team-performance-kpi-alignment':['operations'],
+    'luxury-beauty-success':['growth'],
+    'mens-vitality-china':['growth'],
+    'market-potential':['market','operations'],
+    'overseas-ecommerce-erp-integration':['operations'],
+    'commerce-success':['growth','operations'],
+    'motorcycle-communication-china':['growth']
+  };
+  function applyFilter(selected){
+    var visible=0;
+    cards.forEach(function(card){
+      var tags=categories[card.getAttribute('data-case-detail')] || [];
+      card.hidden=selected!=='all' && tags.indexOf(selected)===-1;
+      if(!card.hidden){visible++;}
+    });
+    filters.forEach(function(button){
+      var active=button.getAttribute('data-case-filter')===selected;
+      button.classList.toggle('is-active',active);
+      button.setAttribute('aria-pressed',active?'true':'false');
+    });
+    if(count){count.textContent=visible;}
+    if(countLabel){countLabel.textContent=visible===1?'case':'cases';}
+  }
+  filters.forEach(function(button){
+    button.addEventListener('click',function(){
+      applyFilter(button.getAttribute('data-case-filter'));
+    });
+  });
+  applyFilter('all');
+})();
+
 /* Filter, search, and paginate the Blogs library. */
 (function(){
   var page=document.getElementById('pg-l-blogs');
